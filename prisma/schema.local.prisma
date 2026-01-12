@@ -1,0 +1,101 @@
+// This is your Prisma schema file for local development with SQLite,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Model for storing contact form enquiries
+model Enquiry {
+  id            String       @id @default(uuid())
+  firstName     String
+  lastName      String
+  email         String
+  phone         String?
+  message       String
+  type          String       @default("GENERAL")
+  flightDetails String?
+  holidayDetails String?
+  packageDetails String?
+  status        EnquiryStatus @default(NEW)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+// Status of enquiries
+enum EnquiryStatus {
+  NEW
+  IN_PROGRESS
+  RESPONDED
+  CLOSED
+}
+
+// Model for admin users
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      UserRole @default(ADMIN)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// User roles
+enum UserRole {
+  ADMIN
+  STAFF
+}
+
+// Model for holidays
+model Holiday {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  destination String
+  duration    String
+  price       Float
+  imageUrl    String?
+  featured    Boolean  @default(false)
+  available   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Trip status enum
+enum TripStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+// Trip Plan model for handling customer trip requests
+model TripPlan {
+  id            String     @id @default(uuid())
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  
+  // Trip details
+  destination   String
+  tripType      String     // flight, hotel, both
+  departureDate DateTime
+  returnDate    DateTime
+  adults        Int        @default(1)
+  children      Int        @default(0)
+  infants       Int        @default(0)
+  
+  // Customer information
+  customerName  String
+  customerEmail String
+  
+  // Admin tracking fields
+  status        TripStatus @default(PENDING)
+  notes         String?
+  assignedTo    String?    // Staff member handling this request
+} 

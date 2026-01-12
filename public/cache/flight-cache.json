@@ -1,0 +1,4815 @@
+{
+  "timestamp": 1748466811601,
+  "data": [
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-29",
+      "lastTicketingDateTime": "2025-05-29",
+      "numberOfBookableSeats": 7,
+      "itineraries": [
+        {
+          "duration": "PT1H50M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-11T20:45:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-06-11T23:35:00"
+              },
+              "carrierCode": "D8",
+              "number": "3521",
+              "aircraft": {
+                "code": "73H"
+              },
+              "operating": {
+                "carrierCode": "D8"
+              },
+              "duration": "PT1H50M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT1H55M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "2",
+                "at": "2025-06-18T15:25:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-18T16:20:00"
+              },
+              "carrierCode": "D8",
+              "number": "3524",
+              "aircraft": {
+                "code": "7M8"
+              },
+              "operating": {
+                "carrierCode": "D8"
+              },
+              "duration": "PT1H55M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "99.44",
+        "base": "24.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "99.44"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "DY"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "99.44",
+            "base": "24.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "QCALF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "Q",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UNDERSEAT CARRY ON UP TO 88CM",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "QCALF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "Q",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UNDERSEAT CARRY ON UP TO 88CM",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Copenhagen"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-06-11",
+      "lastTicketingDateTime": "2025-06-11",
+      "numberOfBookableSeats": 8,
+      "itineraries": [
+        {
+          "duration": "PT2H30M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LCY",
+                "at": "2025-06-11T08:30:00"
+              },
+              "arrival": {
+                "iataCode": "FCO",
+                "terminal": "3",
+                "at": "2025-06-11T12:00:00"
+              },
+              "carrierCode": "AZ",
+              "number": "211",
+              "aircraft": {
+                "code": "221"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT2H30M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT2H50M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FCO",
+                "terminal": "1",
+                "at": "2025-06-18T09:25:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "N",
+                "at": "2025-06-18T11:15:00"
+              },
+              "carrierCode": "AZ",
+              "number": "216",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT2H50M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "169.26",
+        "base": "27.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "169.26"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "AZ"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "169.26",
+            "base": "27.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "WRLGUK1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "W",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "FRLGUK1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "F",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Rome"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-29",
+      "lastTicketingDateTime": "2025-05-29",
+      "numberOfBookableSeats": 4,
+      "itineraries": [
+        {
+          "duration": "PT2H10M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-11T21:05:00"
+              },
+              "arrival": {
+                "iataCode": "BCN",
+                "terminal": "1",
+                "at": "2025-06-12T00:15:00"
+              },
+              "carrierCode": "IB",
+              "number": "5603",
+              "aircraft": {
+                "code": "320"
+              },
+              "operating": {
+                "carrierCode": "VY"
+              },
+              "duration": "PT2H10M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT2H30M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "BCN",
+                "terminal": "1",
+                "at": "2025-06-18T08:45:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-18T10:15:00"
+              },
+              "carrierCode": "IB",
+              "number": "5506",
+              "aircraft": {
+                "code": "320"
+              },
+              "operating": {
+                "carrierCode": "VY"
+              },
+              "duration": "PT2H30M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "184.37",
+        "base": "127.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "184.37"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "IB"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "184.37",
+            "base": "127.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "SRVYN4",
+              "class": "S",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              }
+            },
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "ARVYN4",
+              "class": "A",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              }
+            }
+          ]
+        }
+      ],
+      "cityName": "Barcelona"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-06-27",
+      "lastTicketingDateTime": "2025-06-27",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT2H30M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LCY",
+                "at": "2025-06-27T16:50:00"
+              },
+              "arrival": {
+                "iataCode": "FCO",
+                "terminal": "3",
+                "at": "2025-06-27T20:20:00"
+              },
+              "carrierCode": "AZ",
+              "number": "213",
+              "aircraft": {
+                "code": "221"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT2H30M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT2H50M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FCO",
+                "terminal": "1",
+                "at": "2025-07-04T09:25:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "N",
+                "at": "2025-07-04T11:15:00"
+              },
+              "carrierCode": "AZ",
+              "number": "216",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT2H50M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "192.26",
+        "base": "42.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "192.26"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "AZ"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "192.26",
+            "base": "42.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "WRLGUK1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "W",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "LRLGUK1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "L",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Rome",
+      "isAlternativeDate": true
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-29",
+      "lastTicketingDateTime": "2025-05-29",
+      "numberOfBookableSeats": 1,
+      "itineraries": [
+        {
+          "duration": "PT10H35M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-11T20:45:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-06-11T23:35:00"
+              },
+              "carrierCode": "D8",
+              "number": "3521",
+              "aircraft": {
+                "code": "73H"
+              },
+              "operating": {
+                "carrierCode": "D8"
+              },
+              "duration": "PT1H50M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "2",
+                "at": "2025-06-12T06:55:00"
+              },
+              "arrival": {
+                "iataCode": "PRG",
+                "terminal": "2",
+                "at": "2025-06-12T08:20:00"
+              },
+              "carrierCode": "D8",
+              "number": "3580",
+              "aircraft": {
+                "code": "73H"
+              },
+              "operating": {
+                "carrierCode": "D8"
+              },
+              "duration": "PT1H25M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT14H45M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "PRG",
+                "terminal": "2",
+                "at": "2025-06-18T19:30:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-06-18T20:50:00"
+              },
+              "carrierCode": "D8",
+              "number": "2067",
+              "aircraft": {
+                "code": "73H"
+              },
+              "operating": {
+                "carrierCode": "D8"
+              },
+              "duration": "PT1H20M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "2",
+                "at": "2025-06-19T07:55:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-19T09:15:00"
+              },
+              "carrierCode": "D8",
+              "number": "3510",
+              "aircraft": {
+                "code": "7M8"
+              },
+              "operating": {
+                "carrierCode": "D8"
+              },
+              "duration": "PT2H20M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "204.07",
+        "base": "103.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "204.07"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "DY"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "204.07",
+            "base": "103.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "QCALF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "Q",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UNDERSEAT CARRY ON UP TO 88CM",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "QCALF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "Q",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UNDERSEAT CARRY ON UP TO 88CM",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "QCALF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "Q",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UNDERSEAT CARRY ON UP TO 88CM",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "TLF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UNDERSEAT CARRY ON UP TO 88CM",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Prague"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-29",
+      "lastTicketingDateTime": "2025-05-29",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT1H20M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LCY",
+                "at": "2025-06-11T06:45:00"
+              },
+              "arrival": {
+                "iataCode": "DUB",
+                "terminal": "2",
+                "at": "2025-06-11T08:05:00"
+              },
+              "carrierCode": "EI",
+              "number": "8360",
+              "aircraft": {
+                "code": "E90"
+              },
+              "operating": {
+                "carrierCode": "CJ"
+              },
+              "duration": "PT1H20M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT1H30M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "DUB",
+                "terminal": "2",
+                "at": "2025-06-18T20:10:00"
+              },
+              "arrival": {
+                "iataCode": "LCY",
+                "at": "2025-06-18T21:40:00"
+              },
+              "carrierCode": "EI",
+              "number": "8371",
+              "aircraft": {
+                "code": "E90"
+              },
+              "operating": {
+                "carrierCode": "CJ"
+              },
+              "duration": "PT1H30M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "224.58",
+        "base": "91.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "224.58"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "EI"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "224.58",
+            "base": "91.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "OU25GDS",
+              "class": "O",
+              "includedCheckedBags": {
+                "weight": 20,
+                "weightUnit": "KG"
+              },
+              "includedCabinBags": {
+                "quantity": 2
+              }
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "NU25GDS",
+              "class": "N",
+              "includedCheckedBags": {
+                "weight": 20,
+                "weightUnit": "KG"
+              },
+              "includedCabinBags": {
+                "quantity": 2
+              }
+            }
+          ]
+        }
+      ],
+      "cityName": "Dublin"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-29",
+      "lastTicketingDateTime": "2025-05-29",
+      "numberOfBookableSeats": 4,
+      "itineraries": [
+        {
+          "duration": "PT2H10M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-27T13:00:00"
+              },
+              "arrival": {
+                "iataCode": "BCN",
+                "terminal": "1",
+                "at": "2025-06-27T16:10:00"
+              },
+              "carrierCode": "IB",
+              "number": "5615",
+              "aircraft": {
+                "code": "321"
+              },
+              "operating": {
+                "carrierCode": "VY"
+              },
+              "duration": "PT2H10M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT2H30M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "BCN",
+                "terminal": "1",
+                "at": "2025-07-04T08:45:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-07-04T10:15:00"
+              },
+              "carrierCode": "IB",
+              "number": "5506",
+              "aircraft": {
+                "code": "320"
+              },
+              "operating": {
+                "carrierCode": "VY"
+              },
+              "duration": "PT2H30M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "234.37",
+        "base": "177.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "234.37"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "IB"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "234.37",
+            "base": "177.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "FRVYN4",
+              "class": "F",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              }
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "ORVYN4",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              }
+            }
+          ]
+        }
+      ],
+      "cityName": "Barcelona",
+      "isAlternativeDate": true
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-06-04",
+      "lastTicketingDateTime": "2025-06-04",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT11H55M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LCY",
+                "at": "2025-06-11T07:40:00"
+              },
+              "arrival": {
+                "iataCode": "LIN",
+                "at": "2025-06-11T10:30:00"
+              },
+              "carrierCode": "AZ",
+              "number": "217",
+              "aircraft": {
+                "code": "221"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT1H50M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "LIN",
+                "at": "2025-06-11T19:05:00"
+              },
+              "arrival": {
+                "iataCode": "CDG",
+                "terminal": "2B",
+                "at": "2025-06-11T20:35:00"
+              },
+              "carrierCode": "AZ",
+              "number": "358",
+              "aircraft": {
+                "code": "223"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT1H30M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT6H5M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "CDG",
+                "terminal": "2B",
+                "at": "2025-06-18T06:10:00"
+              },
+              "arrival": {
+                "iataCode": "FCO",
+                "terminal": "1",
+                "at": "2025-06-18T08:10:00"
+              },
+              "carrierCode": "AZ",
+              "number": "317",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT2H",
+              "id": "5",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "FCO",
+                "terminal": "1",
+                "at": "2025-06-18T09:25:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "N",
+                "at": "2025-06-18T11:15:00"
+              },
+              "carrierCode": "AZ",
+              "number": "216",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT2H50M",
+              "id": "6",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "235.97",
+        "base": "36.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "235.97"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "AZ"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "235.97",
+            "base": "36.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "ORLGEU1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "ORLGEU1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "5",
+              "cabin": "ECONOMY",
+              "fareBasis": "ORLGEU1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "6",
+              "cabin": "ECONOMY",
+              "fareBasis": "ORLGEU1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Paris"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-07-27",
+      "lastTicketingDateTime": "2025-07-27",
+      "numberOfBookableSeats": 2,
+      "itineraries": [
+        {
+          "duration": "PT1H15M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "4",
+                "at": "2025-07-27T19:45:00"
+              },
+              "arrival": {
+                "iataCode": "CDG",
+                "terminal": "2E",
+                "at": "2025-07-27T22:00:00"
+              },
+              "carrierCode": "AF",
+              "number": "1181",
+              "aircraft": {
+                "code": "223"
+              },
+              "operating": {
+                "carrierCode": "AF"
+              },
+              "duration": "PT1H15M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT1H25M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "CDG",
+                "terminal": "2E",
+                "at": "2025-08-03T21:00:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "4",
+                "at": "2025-08-03T21:25:00"
+              },
+              "carrierCode": "AF",
+              "number": "1380",
+              "aircraft": {
+                "code": "223"
+              },
+              "operating": {
+                "carrierCode": "AF"
+              },
+              "duration": "PT1H25M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "237.88",
+        "base": "103.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "237.88"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "AF"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "237.88",
+            "base": "103.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "TYS0AALA",
+              "brandedFare": "LIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG 1PC OF 23KG 158CM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "BEVERAGE",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SEAT SELECTION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "AYS02ALA",
+              "brandedFare": "LIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "A",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG 1PC OF 23KG 158CM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "BEVERAGE",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SEAT SELECTION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Paris",
+      "isAlternativeDate": true
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-06-11",
+      "lastTicketingDateTime": "2025-06-11",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT1H15M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "4",
+                "at": "2025-06-11T20:55:00"
+              },
+              "arrival": {
+                "iataCode": "AMS",
+                "at": "2025-06-11T23:10:00"
+              },
+              "carrierCode": "KL",
+              "number": "1016",
+              "aircraft": {
+                "code": "295"
+              },
+              "duration": "PT1H15M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT1H25M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "AMS",
+                "at": "2025-06-18T07:15:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "4",
+                "at": "2025-06-18T07:40:00"
+              },
+              "carrierCode": "KL",
+              "number": "1001",
+              "aircraft": {
+                "code": "32Q"
+              },
+              "operating": {
+                "carrierCode": "KL"
+              },
+              "duration": "PT1H25M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "251.64",
+        "base": "74.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "251.64"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "AF"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "251.64",
+            "base": "74.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "TYS0AALA",
+              "brandedFare": "LIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG 1PC OF 23KG 158CM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "BEVERAGE",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SEAT SELECTION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "TYS0AALA",
+              "brandedFare": "LIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG 1PC OF 23KG 158CM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "BEVERAGE",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SEAT SELECTION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Amsterdam"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-29",
+      "lastTicketingDateTime": "2025-05-29",
+      "numberOfBookableSeats": 7,
+      "itineraries": [
+        {
+          "duration": "PT22H55M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-11T20:50:00"
+              },
+              "arrival": {
+                "iataCode": "OSL",
+                "at": "2025-06-11T23:55:00"
+              },
+              "carrierCode": "DY",
+              "number": "1311",
+              "aircraft": {
+                "code": "73H"
+              },
+              "operating": {
+                "carrierCode": "DY"
+              },
+              "duration": "PT2H5M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "OSL",
+                "at": "2025-06-12T18:25:00"
+              },
+              "arrival": {
+                "iataCode": "BUD",
+                "terminal": "2A",
+                "at": "2025-06-12T20:45:00"
+              },
+              "carrierCode": "DY",
+              "number": "1552",
+              "aircraft": {
+                "code": "73H"
+              },
+              "operating": {
+                "carrierCode": "DY"
+              },
+              "duration": "PT2H20M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT6H20M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "BUD",
+                "terminal": "2B",
+                "at": "2025-06-18T11:00:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-06-18T12:50:00"
+              },
+              "carrierCode": "D8",
+              "number": "3551",
+              "aircraft": {
+                "code": "7M8"
+              },
+              "operating": {
+                "carrierCode": "D8"
+              },
+              "duration": "PT1H50M",
+              "id": "5",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "2",
+                "at": "2025-06-18T15:25:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-18T16:20:00"
+              },
+              "carrierCode": "D8",
+              "number": "3524",
+              "aircraft": {
+                "code": "7M8"
+              },
+              "operating": {
+                "carrierCode": "D8"
+              },
+              "duration": "PT1H55M",
+              "id": "6",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "256.32",
+        "base": "160.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "256.32"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "DY"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "256.32",
+            "base": "160.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "PKLF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "P",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "INTERNET ACCESS",
+                  "isChargeable": false,
+                  "amenityType": "ENTERTAINMENT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "ZKLF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "Z",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "INTERNET ACCESS",
+                  "isChargeable": false,
+                  "amenityType": "ENTERTAINMENT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "5",
+              "cabin": "ECONOMY",
+              "fareBasis": "QCALF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "Q",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UNDERSEAT CARRY ON UP TO 88CM",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "6",
+              "cabin": "ECONOMY",
+              "fareBasis": "QCALF",
+              "brandedFare": "LOWFARE",
+              "brandedFareLabel": "LOWFARE",
+              "class": "Q",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 0
+              },
+              "amenities": [
+                {
+                  "description": "CHARGEABLE BAG 1",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHARGEABLE BAG 2",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FAST TRACK WHERE OFFERED",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "OVERHEAD CABIN BAG W PRIO BRD",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UNDERSEAT CARRY ON UP TO 88CM",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Budapest"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-28",
+      "lastTicketingDateTime": "2025-05-28",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT2H19M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-11T20:40:00"
+              },
+              "arrival": {
+                "iataCode": "MAD",
+                "terminal": "4S",
+                "at": "2025-06-11T23:59:00"
+              },
+              "carrierCode": "IB",
+              "number": "1864",
+              "aircraft": {
+                "code": "32A"
+              },
+              "operating": {
+                "carrierCode": "I2"
+              },
+              "duration": "PT2H19M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT4H35M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "MAD",
+                "terminal": "4",
+                "at": "2025-06-18T19:40:00"
+              },
+              "arrival": {
+                "iataCode": "ALC",
+                "at": "2025-06-18T20:55:00"
+              },
+              "carrierCode": "IB",
+              "number": "1015",
+              "aircraft": {
+                "code": "CRK"
+              },
+              "duration": "PT1H15M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "ALC",
+                "at": "2025-06-18T21:40:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-18T23:15:00"
+              },
+              "carrierCode": "IB",
+              "number": "3887",
+              "aircraft": {
+                "code": "321"
+              },
+              "duration": "PT2H35M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "260.12",
+        "base": "193.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "260.12"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "IB"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "260.12",
+            "base": "193.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "VLV2J",
+              "class": "V",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 2
+              }
+            },
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "VLV2J",
+              "brandedFare": "OPTIMA",
+              "brandedFareLabel": "OPTIMA",
+              "class": "V",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 2
+              },
+              "amenities": [
+                {
+                  "description": "SECOND CHECKED BAG",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "THIRD CHECKED BAG",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK OR DRINK",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "WIFI CONNECTION",
+                  "isChargeable": true,
+                  "amenityType": "TRAVEL_SERVICES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "NLZ0J",
+              "brandedFare": "BASIC",
+              "brandedFareLabel": "BASIC",
+              "class": "N",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 2
+              },
+              "amenities": [
+                {
+                  "description": "FIRST CHECKED BAG",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SECOND CHECKED BAG",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "THIRD CHECKED BAG",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK OR DRINK",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Madrid"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-29",
+      "lastTicketingDateTime": "2025-05-29",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT4H15M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LCY",
+                "at": "2025-06-11T09:25:00"
+              },
+              "arrival": {
+                "iataCode": "ZRH",
+                "at": "2025-06-11T12:00:00"
+              },
+              "carrierCode": "LX",
+              "number": "461",
+              "aircraft": {
+                "code": "221"
+              },
+              "operating": {
+                "carrierCode": "LX"
+              },
+              "duration": "PT1H35M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "ZRH",
+                "at": "2025-06-11T13:20:00"
+              },
+              "arrival": {
+                "iataCode": "VIE",
+                "terminal": "3",
+                "at": "2025-06-11T14:40:00"
+              },
+              "carrierCode": "LX",
+              "number": "3530",
+              "aircraft": {
+                "code": "320"
+              },
+              "operating": {
+                "carrierCode": "OS"
+              },
+              "duration": "PT1H20M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT5H50M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "VIE",
+                "terminal": "3",
+                "at": "2025-06-18T13:00:00"
+              },
+              "arrival": {
+                "iataCode": "ZRH",
+                "at": "2025-06-18T14:20:00"
+              },
+              "carrierCode": "LX",
+              "number": "3571",
+              "aircraft": {
+                "code": "223"
+              },
+              "duration": "PT1H20M",
+              "id": "5",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "ZRH",
+                "at": "2025-06-18T17:10:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "N",
+                "at": "2025-06-18T17:50:00"
+              },
+              "carrierCode": "LX",
+              "number": "432",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "LX"
+              },
+              "duration": "PT1H40M",
+              "id": "6",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "265.02",
+        "base": "87.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "265.02"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "LX"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "265.02",
+            "base": "87.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "KEUCLST3",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "K",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "EXTRA LEGROOM SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CATERING ON EUROPE AND CAI FLT",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "KEUCLST3",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "K",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "EXTRA LEGROOM SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CATERING ON EUROPE AND CAI FLT",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "5",
+              "cabin": "ECONOMY",
+              "fareBasis": "KEUCLST3",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "K",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "EXTRA LEGROOM SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CATERING ON EUROPE AND CAI FLT",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "6",
+              "cabin": "ECONOMY",
+              "fareBasis": "KEUCLST3",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "K",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "EXTRA LEGROOM SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CATERING ON EUROPE AND CAI FLT",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Vienna"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-29",
+      "lastTicketingDateTime": "2025-05-29",
+      "numberOfBookableSeats": 6,
+      "itineraries": [
+        {
+          "duration": "PT13H20M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-06-11T18:40:00"
+              },
+              "arrival": {
+                "iataCode": "ZRH",
+                "at": "2025-06-11T21:25:00"
+              },
+              "carrierCode": "LX",
+              "number": "327",
+              "aircraft": {
+                "code": "32Q"
+              },
+              "operating": {
+                "carrierCode": "LX"
+              },
+              "duration": "PT1H45M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "ZRH",
+                "at": "2025-06-12T06:00:00"
+              },
+              "arrival": {
+                "iataCode": "LIS",
+                "terminal": "1",
+                "at": "2025-06-12T08:00:00"
+              },
+              "carrierCode": "LX",
+              "number": "4582",
+              "aircraft": {
+                "code": "320"
+              },
+              "operating": {
+                "carrierCode": "TP"
+              },
+              "duration": "PT3H",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT7H5M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LIS",
+                "terminal": "1",
+                "at": "2025-06-18T05:55:00"
+              },
+              "arrival": {
+                "iataCode": "ZRH",
+                "at": "2025-06-18T09:55:00"
+              },
+              "carrierCode": "LX",
+              "number": "2083",
+              "aircraft": {
+                "code": "32Q"
+              },
+              "operating": {
+                "carrierCode": "LX"
+              },
+              "duration": "PT3H",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "ZRH",
+                "at": "2025-06-18T12:05:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-06-18T13:00:00"
+              },
+              "carrierCode": "LX",
+              "number": "332",
+              "aircraft": {
+                "code": "223"
+              },
+              "operating": {
+                "carrierCode": "LX"
+              },
+              "duration": "PT1H55M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "266.78",
+        "base": "122.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "266.78"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "LX"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "266.78",
+            "base": "122.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "KETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "K",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "EXTRA LEGROOM SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CATERING ON EUROPE AND CAI FLT",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "KETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "K",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "EXTRA LEGROOM SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CATERING ON EUROPE AND CAI FLT",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "KETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "K",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "EXTRA LEGROOM SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CATERING ON EUROPE AND CAI FLT",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "KETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "K",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "EXTRA LEGROOM SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CATERING ON EUROPE AND CAI FLT",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Lisbon"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-06-27",
+      "lastTicketingDateTime": "2025-06-27",
+      "numberOfBookableSeats": 4,
+      "itineraries": [
+        {
+          "duration": "PT1H20M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "4",
+                "at": "2025-06-27T17:35:00"
+              },
+              "arrival": {
+                "iataCode": "CDG",
+                "terminal": "2E",
+                "at": "2025-06-27T19:55:00"
+              },
+              "carrierCode": "AF",
+              "number": "1281",
+              "aircraft": {
+                "code": "223"
+              },
+              "operating": {
+                "carrierCode": "AF"
+              },
+              "duration": "PT1H20M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT1H25M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "CDG",
+                "terminal": "2E",
+                "at": "2025-07-04T07:35:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "4",
+                "at": "2025-07-04T08:00:00"
+              },
+              "carrierCode": "AF",
+              "number": "1680",
+              "aircraft": {
+                "code": "223"
+              },
+              "operating": {
+                "carrierCode": "AF"
+              },
+              "duration": "PT1H25M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "280.88",
+        "base": "146.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "280.88"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "AF"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "280.88",
+            "base": "146.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "SYS02ALA",
+              "brandedFare": "LIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "S",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG 1PC OF 23KG 158CM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "BEVERAGE",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SEAT SELECTION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "LYS0AALA",
+              "brandedFare": "LIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "L",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CHECKED BAG 1PC OF 23KG 158CM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "BEVERAGE",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SEAT SELECTION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Paris",
+      "isAlternativeDate": true
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-28",
+      "lastTicketingDateTime": "2025-05-28",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT17H5M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "STN",
+                "at": "2025-06-11T00:20:00"
+              },
+              "arrival": {
+                "iataCode": "SAW",
+                "at": "2025-06-11T06:05:00"
+              },
+              "carrierCode": "PC",
+              "number": "1174",
+              "aircraft": {
+                "code": "321"
+              },
+              "operating": {
+                "carrierCode": "PC"
+              },
+              "duration": "PT3H45M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "SAW",
+                "at": "2025-06-11T17:55:00"
+              },
+              "arrival": {
+                "iataCode": "ATH",
+                "at": "2025-06-11T19:25:00"
+              },
+              "carrierCode": "PC",
+              "number": "1193",
+              "aircraft": {
+                "code": "321"
+              },
+              "operating": {
+                "carrierCode": "PC"
+              },
+              "duration": "PT1H30M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT21H15M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "ATH",
+                "terminal": "MN",
+                "at": "2025-06-18T20:25:00"
+              },
+              "arrival": {
+                "iataCode": "SAW",
+                "at": "2025-06-18T21:50:00"
+              },
+              "carrierCode": "PC",
+              "number": "1194",
+              "aircraft": {
+                "code": "321"
+              },
+              "operating": {
+                "carrierCode": "PC"
+              },
+              "duration": "PT1H25M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "SAW",
+                "at": "2025-06-19T13:40:00"
+              },
+              "arrival": {
+                "iataCode": "STN",
+                "at": "2025-06-19T15:40:00"
+              },
+              "carrierCode": "PC",
+              "number": "1165",
+              "aircraft": {
+                "code": "738"
+              },
+              "operating": {
+                "carrierCode": "PC"
+              },
+              "duration": "PT4H",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "287.16",
+        "base": "49.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "287.16"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "PC"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "287.16",
+            "base": "49.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "QRTBYD1S",
+              "brandedFare": "BYD",
+              "brandedFareLabel": "BEYOND ESSENTIALS",
+              "class": "Q",
+              "includedCheckedBags": {
+                "weight": 20,
+                "weightUnit": "KG"
+              },
+              "includedCabinBags": {
+                "weight": 11,
+                "weightUnit": "KG"
+              },
+              "amenities": [
+                {
+                  "description": "UPTO44LB 20KG BAGGAGE",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPTO22LB 10KG BAGGAGE",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CARRY8KG 18LB UPTO 45LI 115LCM",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "2PCT MILES EARNED",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "QRTBYD1S",
+              "brandedFare": "BYD",
+              "brandedFareLabel": "BEYOND ESSENTIALS",
+              "class": "Q",
+              "includedCheckedBags": {
+                "weight": 20,
+                "weightUnit": "KG"
+              },
+              "includedCabinBags": {
+                "weight": 11,
+                "weightUnit": "KG"
+              },
+              "amenities": [
+                {
+                  "description": "UPTO44LB 20KG BAGGAGE",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPTO22LB 10KG BAGGAGE",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CARRY8KG 18LB UPTO 45LI 115LCM",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "2PCT MILES EARNED",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "QRTBYD1S",
+              "brandedFare": "BYD",
+              "brandedFareLabel": "BEYOND ESSENTIALS",
+              "class": "Q",
+              "includedCheckedBags": {
+                "weight": 20,
+                "weightUnit": "KG"
+              },
+              "includedCabinBags": {
+                "weight": 11,
+                "weightUnit": "KG"
+              },
+              "amenities": [
+                {
+                  "description": "UPTO44LB 20KG BAGGAGE",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPTO22LB 10KG BAGGAGE",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CARRY8KG 18LB UPTO 45LI 115LCM",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "2PCT MILES EARNED",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "QRTBYD1S",
+              "brandedFare": "BYD",
+              "brandedFareLabel": "BEYOND ESSENTIALS",
+              "class": "Q",
+              "includedCheckedBags": {
+                "weight": 20,
+                "weightUnit": "KG"
+              },
+              "includedCabinBags": {
+                "weight": 11,
+                "weightUnit": "KG"
+              },
+              "amenities": [
+                {
+                  "description": "UPTO44LB 20KG BAGGAGE",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPTO22LB 10KG BAGGAGE",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CARRY8KG 18LB UPTO 45LI 115LCM",
+                  "isChargeable": false,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "2PCT MILES EARNED",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Athens"
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-29",
+      "lastTicketingDateTime": "2025-05-29",
+      "numberOfBookableSeats": 4,
+      "itineraries": [
+        {
+          "duration": "PT2H10M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-07-27T21:45:00"
+              },
+              "arrival": {
+                "iataCode": "BCN",
+                "terminal": "1",
+                "at": "2025-07-28T00:55:00"
+              },
+              "carrierCode": "IB",
+              "number": "5611",
+              "aircraft": {
+                "code": "321"
+              },
+              "operating": {
+                "carrierCode": "VY"
+              },
+              "duration": "PT2H10M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT2H30M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "BCN",
+                "terminal": "1",
+                "at": "2025-08-03T08:45:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-08-03T10:15:00"
+              },
+              "carrierCode": "IB",
+              "number": "5506",
+              "aircraft": {
+                "code": "320"
+              },
+              "operating": {
+                "carrierCode": "VY"
+              },
+              "duration": "PT2H30M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "311.37",
+        "base": "254.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "311.37"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "IB"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "311.37",
+            "base": "254.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "FRVYN4",
+              "class": "F",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              }
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "FRVYN4",
+              "class": "F",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              }
+            }
+          ]
+        }
+      ],
+      "cityName": "Barcelona",
+      "isAlternativeDate": true
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-07-27",
+      "lastTicketingDateTime": "2025-07-27",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT2H30M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LCY",
+                "at": "2025-07-27T16:55:00"
+              },
+              "arrival": {
+                "iataCode": "FCO",
+                "terminal": "3",
+                "at": "2025-07-27T20:25:00"
+              },
+              "carrierCode": "AZ",
+              "number": "213",
+              "aircraft": {
+                "code": "221"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT2H30M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT2H50M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FCO",
+                "terminal": "1",
+                "at": "2025-08-03T09:25:00"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "N",
+                "at": "2025-08-03T11:15:00"
+              },
+              "carrierCode": "AZ",
+              "number": "216",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT2H50M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "EUR",
+        "total": "370.26",
+        "base": "166.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "370.26"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": false
+      },
+      "validatingAirlineCodes": [
+        "AZ"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "EUR",
+            "total": "370.26",
+            "base": "166.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "TRLGUK1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "SRLGUK1",
+              "brandedFare": "ECOLIGHT",
+              "brandedFareLabel": "ECONOMY LIGHT",
+              "class": "S",
+              "includedCheckedBags": {
+                "quantity": 0
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "UP TO 50LB 23KG 62LI 158LCM",
+                  "isChargeable": true,
+                  "amenityType": "BAGGAGE",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "ADVANCE SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "SNACK",
+                  "isChargeable": false,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "cityName": "Rome",
+      "isAlternativeDate": true
+    }
+  ]
+}

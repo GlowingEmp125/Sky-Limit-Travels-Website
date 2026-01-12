@@ -1,0 +1,475 @@
+{
+  "timestamp": 1748470929115,
+  "data": [
+    {
+      "id": "mock-FR-0-CDG",
+      "price": {
+        "total": "118.59",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-06-27T05:30:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "CDG",
+                "terminal": "2E",
+                "at": "2025-06-27T06:30:00.000Z"
+              },
+              "carrierCode": "BA",
+              "number": "170",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "CDG",
+                "terminal": "2E",
+                "at": "2025-07-04T09:45:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-07-04T10:45:00.000Z"
+              },
+              "carrierCode": "BA",
+              "number": "180",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-FR-5-TLS",
+      "price": {
+        "total": "119.68",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "STN",
+                "terminal": "1",
+                "at": "2025-07-02T10:35:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "TLS",
+                "terminal": "1",
+                "at": "2025-07-02T11:35:00.000Z"
+              },
+              "carrierCode": "IB",
+              "number": "175",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "TLS",
+                "terminal": "1",
+                "at": "2025-07-14T14:50:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "STN",
+                "terminal": "1",
+                "at": "2025-07-14T15:50:00.000Z"
+              },
+              "carrierCode": "IB",
+              "number": "185",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-FR-1-ORY",
+      "price": {
+        "total": "142.76",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-06-28T06:31:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "ORY",
+                "terminal": "1",
+                "at": "2025-06-28T07:31:00.000Z"
+              },
+              "carrierCode": "LH",
+              "number": "171",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "ORY",
+                "terminal": "1",
+                "at": "2025-07-06T10:46:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-07-06T11:46:00.000Z"
+              },
+              "carrierCode": "LH",
+              "number": "181",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-FR-6-CDG",
+      "price": {
+        "total": "179.45",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-07-03T11:36:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "CDG",
+                "terminal": "2E",
+                "at": "2025-07-03T12:36:00.000Z"
+              },
+              "carrierCode": "AZ",
+              "number": "176",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "CDG",
+                "terminal": "2E",
+                "at": "2025-07-16T15:51:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-07-16T16:51:00.000Z"
+              },
+              "carrierCode": "AZ",
+              "number": "186",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-FR-7-ORY",
+      "price": {
+        "total": "210.78",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-07-04T12:37:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "ORY",
+                "terminal": "1",
+                "at": "2025-07-04T13:37:00.000Z"
+              },
+              "carrierCode": "TK",
+              "number": "177",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "ORY",
+                "terminal": "1",
+                "at": "2025-07-11T16:52:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-07-11T17:52:00.000Z"
+              },
+              "carrierCode": "TK",
+              "number": "187",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-FR-2-NCE",
+      "price": {
+        "total": "216.15",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "STN",
+                "terminal": "1",
+                "at": "2025-06-29T07:32:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "NCE",
+                "terminal": "2",
+                "at": "2025-06-29T08:32:00.000Z"
+              },
+              "carrierCode": "AF",
+              "number": "172",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "NCE",
+                "terminal": "2",
+                "at": "2025-07-08T11:47:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "STN",
+                "terminal": "1",
+                "at": "2025-07-08T12:47:00.000Z"
+              },
+              "carrierCode": "AF",
+              "number": "182",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-FR-8-NCE",
+      "price": {
+        "total": "218.97",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "STN",
+                "terminal": "1",
+                "at": "2025-07-05T13:38:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "NCE",
+                "terminal": "2",
+                "at": "2025-07-05T14:38:00.000Z"
+              },
+              "carrierCode": "LX",
+              "number": "178",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "NCE",
+                "terminal": "2",
+                "at": "2025-07-13T17:53:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "STN",
+                "terminal": "1",
+                "at": "2025-07-13T18:53:00.000Z"
+              },
+              "carrierCode": "LX",
+              "number": "188",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-FR-3-LYS",
+      "price": {
+        "total": "239.97",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-06-30T08:33:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LYS",
+                "terminal": "1A",
+                "at": "2025-06-30T09:33:00.000Z"
+              },
+              "carrierCode": "U2",
+              "number": "173",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LYS",
+                "terminal": "1A",
+                "at": "2025-07-10T12:48:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-07-10T13:48:00.000Z"
+              },
+              "carrierCode": "U2",
+              "number": "183",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-FR-4-MRS",
+      "price": {
+        "total": "261.77",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-07-01T09:34:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "MRS",
+                "terminal": "1",
+                "at": "2025-07-01T10:34:00.000Z"
+              },
+              "carrierCode": "FR",
+              "number": "174",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "MRS",
+                "terminal": "1",
+                "at": "2025-07-12T13:49:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LGW",
+                "terminal": "S",
+                "at": "2025-07-12T14:49:00.000Z"
+              },
+              "carrierCode": "FR",
+              "number": "184",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-FR-9-LYS",
+      "price": {
+        "total": "280.20",
+        "currency": "EUR"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-07-06T14:39:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LYS",
+                "terminal": "1A",
+                "at": "2025-07-06T15:39:00.000Z"
+              },
+              "carrierCode": "EY",
+              "number": "179",
+              "duration": "PT1H45M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LYS",
+                "terminal": "1A",
+                "at": "2025-07-15T18:54:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-07-15T19:54:00.000Z"
+              },
+              "carrierCode": "EY",
+              "number": "189",
+              "duration": "PT1H45M"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

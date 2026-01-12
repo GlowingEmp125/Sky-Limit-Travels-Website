@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Password Reset Tool</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      line-height: 1.5;
+    }
+    .container {
+      border: 1px solid #e1e1e1;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #0070f3;
+      margin-top: 0;
+    }
+    .warning {
+      background-color: #fff5f5;
+      color: #e53e3e;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #e53e3e;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #d1d1d1;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0054b3;
+    }
+    #result {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: 6px;
+      display: none;
+    }
+    .success {
+      background-color: #f0fff4;
+      border-left: 4px solid #48bb78;
+    }
+    .error {
+      background-color: #fff5f5;
+      border-left: 4px solid #e53e3e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Password Reset Tool</h1>
+    
+    <div class="warning">
+      <strong>Security Warning!</strong>
+      <p>This tool should only be used in emergency situations to reset the admin password. 
+      Delete the <code>/api/admin/direct-reset</code> endpoint and this HTML file after use.</p>
+    </div>
+    
+    <form id="resetForm">
+      <div>
+        <label for="connectionString">Supabase PostgreSQL Connection String:</label>
+        <input type="text" id="connectionString" placeholder="postgresql://postgres:password@db.example.supabase.co:5432/database" required>
+      </div>
+      
+      <button type="submit">Reset Admin Password</button>
+    </form>
+    
+    <div id="result"></div>
+  </div>
+
+  <script>
+    document.getElementById('resetForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const connectionString = document.getElementById('connectionString').value;
+      const resultDiv = document.getElementById('result');
+      
+      if (!connectionString) {
+        alert('Please enter a valid PostgreSQL connection string');
+        return;
+      }
+      
+      // Display loading state
+      resultDiv.style.display = 'block';
+      resultDiv.className = '';
+      resultDiv.innerHTML = 'Resetting admin password...';
+      
+      try {
+        // Encode the connection string as base64
+        const encodedString = btoa(connectionString);
+        
+        // Call the API
+        const response = await fetch(`/api/admin/direct-reset?db=${encodedString}`);
+        const data = await response.json();
+        
+        if (response.ok) {
+          // Success
+          resultDiv.className = 'success';
+          resultDiv.innerHTML = `
+            <h3>✅ Reset Successful!</h3>
+            <p>The admin password has been reset. You can now log in with:</p>
+            <ul>
+              <li><strong>Email:</strong> ${data.login.email}</li>
+              <li><strong>Password:</strong> ${data.login.password}</li>
+            </ul>
+            <p><strong>Important:</strong> Remember to delete the reset API endpoint after use for security.</p>
+          `;
+        } else {
+          // Error
+          resultDiv.className = 'error';
+          resultDiv.innerHTML = `
+            <h3>❌ Reset Failed</h3>
+            <p>${data.error}</p>
+            <p>Details: ${data.details || 'No additional details provided'}</p>
+          `;
+        }
+      } catch (error) {
+        resultDiv.className = 'error';
+        resultDiv.innerHTML = `
+          <h3>❌ Connection Error</h3>
+          <p>Failed to connect to the API: ${error.message}</p>
+        `;
+      }
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,3749 @@
+{
+  "timestamp": 1747243858764,
+  "data": [
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 2,
+      "itineraries": [
+        {
+          "duration": "PT7H5M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T06:40:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T09:30:00"
+              },
+              "carrierCode": "SK",
+              "number": "500",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT1H50M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T12:40:00"
+              },
+              "arrival": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-15T14:45:00"
+              },
+              "carrierCode": "SK",
+              "number": "1683",
+              "aircraft": {
+                "code": "CR9"
+              },
+              "operating": {
+                "carrierCode": "WX"
+              },
+              "duration": "PT2H5M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT6H5M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-22T11:20:00"
+              },
+              "arrival": {
+                "iataCode": "OSL",
+                "at": "2025-05-22T13:55:00"
+              },
+              "carrierCode": "SK",
+              "number": "4718",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H35M",
+              "id": "5",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "OSL",
+                "at": "2025-05-22T15:05:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T16:25:00"
+              },
+              "carrierCode": "SK",
+              "number": "809",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H20M",
+              "id": "6",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "187.82",
+        "base": "48.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "187.82"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "SK"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "187.82",
+            "base": "48.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "5",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "6",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "2",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT7H5M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T06:40:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T09:30:00"
+              },
+              "carrierCode": "SK",
+              "number": "500",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT1H50M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T12:40:00"
+              },
+              "arrival": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-15T14:45:00"
+              },
+              "carrierCode": "SK",
+              "number": "1683",
+              "aircraft": {
+                "code": "CR9"
+              },
+              "operating": {
+                "carrierCode": "WX"
+              },
+              "duration": "PT2H5M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT5H40M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-22T11:20:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-22T13:25:00"
+              },
+              "carrierCode": "SK",
+              "number": "1686",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT2H5M",
+              "id": "11",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-22T15:00:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T16:00:00"
+              },
+              "carrierCode": "SK",
+              "number": "505",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT2H",
+              "id": "12",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "197.22",
+        "base": "49.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "197.22"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "SK"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "197.22",
+            "base": "49.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "11",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "12",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "3",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT7H5M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T06:40:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T09:30:00"
+              },
+              "carrierCode": "SK",
+              "number": "500",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT1H50M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T12:40:00"
+              },
+              "arrival": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-15T14:45:00"
+              },
+              "carrierCode": "SK",
+              "number": "1683",
+              "aircraft": {
+                "code": "CR9"
+              },
+              "operating": {
+                "carrierCode": "WX"
+              },
+              "duration": "PT2H5M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT7H20M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-22T11:20:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-22T13:25:00"
+              },
+              "carrierCode": "SK",
+              "number": "1686",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT2H5M",
+              "id": "7",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-22T16:40:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T17:40:00"
+              },
+              "carrierCode": "SK",
+              "number": "1517",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT2H",
+              "id": "8",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "197.22",
+        "base": "49.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "197.22"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "SK"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "197.22",
+            "base": "49.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "7",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "8",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "4",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 3,
+      "itineraries": [
+        {
+          "duration": "PT7H5M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T06:40:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T09:30:00"
+              },
+              "carrierCode": "SK",
+              "number": "500",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT1H50M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T12:40:00"
+              },
+              "arrival": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-15T14:45:00"
+              },
+              "carrierCode": "SK",
+              "number": "1683",
+              "aircraft": {
+                "code": "CR9"
+              },
+              "operating": {
+                "carrierCode": "WX"
+              },
+              "duration": "PT2H5M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT8H30M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-22T11:20:00"
+              },
+              "arrival": {
+                "iataCode": "OSL",
+                "at": "2025-05-22T13:55:00"
+              },
+              "carrierCode": "SK",
+              "number": "4718",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H35M",
+              "id": "9",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "OSL",
+                "at": "2025-05-22T17:30:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T18:50:00"
+              },
+              "carrierCode": "SK",
+              "number": "811",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H20M",
+              "id": "10",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "202.82",
+        "base": "53.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "202.82"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "SK"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "202.82",
+            "base": "53.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "9",
+              "cabin": "ECONOMY",
+              "fareBasis": "TGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "10",
+              "cabin": "ECONOMY",
+              "fareBasis": "TGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "5",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 1,
+      "itineraries": [
+        {
+          "duration": "PT9H",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T09:55:00"
+              },
+              "arrival": {
+                "iataCode": "ARN",
+                "terminal": "5",
+                "at": "2025-05-15T13:20:00"
+              },
+              "carrierCode": "SK",
+              "number": "526",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT2H25M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "ARN",
+                "terminal": "5",
+                "at": "2025-05-15T17:05:00"
+              },
+              "arrival": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-15T19:55:00"
+              },
+              "carrierCode": "SK",
+              "number": "2689",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT2H50M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT6H5M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "MXP",
+                "terminal": "1",
+                "at": "2025-05-22T11:20:00"
+              },
+              "arrival": {
+                "iataCode": "OSL",
+                "at": "2025-05-22T13:55:00"
+              },
+              "carrierCode": "SK",
+              "number": "4718",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H35M",
+              "id": "5",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "OSL",
+                "at": "2025-05-22T15:05:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T16:25:00"
+              },
+              "carrierCode": "SK",
+              "number": "809",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H20M",
+              "id": "6",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "211.32",
+        "base": "60.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "211.32"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "SK"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "211.32",
+            "base": "60.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "LGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "L",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "LGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "L",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "5",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "6",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 1,
+      "itineraries": [
+        {
+          "duration": "PT7H25M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T10:20:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T13:10:00"
+              },
+              "carrierCode": "SK",
+              "number": "502",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT1H50M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T16:10:00"
+              },
+              "arrival": {
+                "iataCode": "FCO",
+                "terminal": "1",
+                "at": "2025-05-15T18:45:00"
+              },
+              "carrierCode": "SK",
+              "number": "691",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H35M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT6H45M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FCO",
+                "terminal": "1",
+                "at": "2025-05-22T11:55:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-22T14:30:00"
+              },
+              "carrierCode": "SK",
+              "number": "682",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H35M",
+              "id": "13",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-22T16:40:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T17:40:00"
+              },
+              "carrierCode": "SK",
+              "number": "1517",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT2H",
+              "id": "14",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "219.22",
+        "base": "55.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "219.22"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "SK"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "219.22",
+            "base": "55.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "TGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "TGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "13",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "14",
+              "cabin": "ECONOMY",
+              "fareBasis": "OGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "O",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "2",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 1,
+      "itineraries": [
+        {
+          "duration": "PT7H25M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T10:20:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T13:10:00"
+              },
+              "carrierCode": "SK",
+              "number": "502",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT1H50M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-15T16:10:00"
+              },
+              "arrival": {
+                "iataCode": "FCO",
+                "terminal": "1",
+                "at": "2025-05-15T18:45:00"
+              },
+              "carrierCode": "SK",
+              "number": "691",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H35M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT7H35M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FCO",
+                "terminal": "1",
+                "at": "2025-05-22T11:55:00"
+              },
+              "arrival": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-22T14:30:00"
+              },
+              "carrierCode": "SK",
+              "number": "682",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "SK"
+              },
+              "duration": "PT2H35M",
+              "id": "11",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "CPH",
+                "terminal": "3",
+                "at": "2025-05-22T17:30:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T18:30:00"
+              },
+              "carrierCode": "SK",
+              "number": "1507",
+              "aircraft": {
+                "code": "32N"
+              },
+              "duration": "PT2H",
+              "id": "12",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "253.42",
+        "base": "69.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "253.42"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "SK"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "253.42",
+            "base": "69.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "TGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "TGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "11",
+              "cabin": "ECONOMY",
+              "fareBasis": "LGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "L",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "12",
+              "cabin": "ECONOMY",
+              "fareBasis": "LGBRSM3",
+              "brandedFare": "GOSMART",
+              "brandedFareLabel": "SAS GO SMART",
+              "class": "L",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "PRE RESERVED SEAT ASSIGNMENT",
+                  "isChargeable": true,
+                  "amenityType": "PRE_RESERVED_SEAT",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "FOOD AND BEVERAGE",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGEABLE TICKET",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE",
+                  "isChargeable": true,
+                  "amenityType": "UPGRADES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "1",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 5,
+      "itineraries": [
+        {
+          "duration": "PT9H25M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T07:25:00"
+              },
+              "arrival": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-15T10:15:00"
+              },
+              "carrierCode": "LH",
+              "number": "2485",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "LH"
+              },
+              "duration": "PT1H50M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-15T16:45:00"
+              },
+              "arrival": {
+                "iataCode": "LIN",
+                "at": "2025-05-15T17:50:00"
+              },
+              "carrierCode": "EN",
+              "number": "8286",
+              "aircraft": {
+                "code": "E95"
+              },
+              "operating": {
+                "carrierCode": "EN"
+              },
+              "duration": "PT1H5M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT4H15M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LIN",
+                "at": "2025-05-22T17:30:00"
+              },
+              "arrival": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-22T18:35:00"
+              },
+              "carrierCode": "LH",
+              "number": "5125",
+              "aircraft": {
+                "code": "221"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT1H5M",
+              "id": "9",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-22T19:40:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T20:45:00"
+              },
+              "carrierCode": "LH",
+              "number": "2482",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "LH"
+              },
+              "duration": "PT2H5M",
+              "id": "10",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "321.02",
+        "base": "138.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "321.02"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "LH"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "321.02",
+            "base": "138.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "VETCLSE0",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "V",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "VETCLSE0",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "V",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "9",
+              "cabin": "ECONOMY",
+              "fareBasis": "TETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "10",
+              "cabin": "ECONOMY",
+              "fareBasis": "TETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "2",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 5,
+      "itineraries": [
+        {
+          "duration": "PT9H55M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T06:55:00"
+              },
+              "arrival": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-15T09:45:00"
+              },
+              "carrierCode": "LH",
+              "number": "2483",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "LH"
+              },
+              "duration": "PT1H50M",
+              "id": "3",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-15T16:45:00"
+              },
+              "arrival": {
+                "iataCode": "LIN",
+                "at": "2025-05-15T17:50:00"
+              },
+              "carrierCode": "EN",
+              "number": "8286",
+              "aircraft": {
+                "code": "E95"
+              },
+              "operating": {
+                "carrierCode": "EN"
+              },
+              "duration": "PT1H5M",
+              "id": "4",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT4H15M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LIN",
+                "at": "2025-05-22T17:30:00"
+              },
+              "arrival": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-22T18:35:00"
+              },
+              "carrierCode": "LH",
+              "number": "5125",
+              "aircraft": {
+                "code": "221"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT1H5M",
+              "id": "9",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-22T19:40:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T20:45:00"
+              },
+              "carrierCode": "LH",
+              "number": "2482",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "LH"
+              },
+              "duration": "PT2H5M",
+              "id": "10",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "321.02",
+        "base": "138.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "321.02"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "LH"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "321.02",
+            "base": "138.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "3",
+              "cabin": "ECONOMY",
+              "fareBasis": "VETCLSE0",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "V",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "4",
+              "cabin": "ECONOMY",
+              "fareBasis": "VETCLSE0",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "V",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "9",
+              "cabin": "ECONOMY",
+              "fareBasis": "TETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "10",
+              "cabin": "ECONOMY",
+              "fareBasis": "TETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flight-offer",
+      "id": "3",
+      "source": "GDS",
+      "instantTicketingRequired": false,
+      "nonHomogeneous": false,
+      "oneWay": false,
+      "isUpsellOffer": false,
+      "lastTicketingDate": "2025-05-14",
+      "lastTicketingDateTime": "2025-05-14",
+      "numberOfBookableSeats": 9,
+      "itineraries": [
+        {
+          "duration": "PT9H25M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-15T07:25:00"
+              },
+              "arrival": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-15T10:15:00"
+              },
+              "carrierCode": "LH",
+              "number": "2485",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "LH"
+              },
+              "duration": "PT1H50M",
+              "id": "1",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-15T16:45:00"
+              },
+              "arrival": {
+                "iataCode": "LIN",
+                "at": "2025-05-15T17:50:00"
+              },
+              "carrierCode": "EN",
+              "number": "8286",
+              "aircraft": {
+                "code": "E95"
+              },
+              "operating": {
+                "carrierCode": "EN"
+              },
+              "duration": "PT1H5M",
+              "id": "2",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        },
+        {
+          "duration": "PT6H10M",
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LIN",
+                "at": "2025-05-22T17:30:00"
+              },
+              "arrival": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-22T18:35:00"
+              },
+              "carrierCode": "LH",
+              "number": "5125",
+              "aircraft": {
+                "code": "221"
+              },
+              "operating": {
+                "carrierCode": "AZ"
+              },
+              "duration": "PT1H5M",
+              "id": "7",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            },
+            {
+              "departure": {
+                "iataCode": "MUC",
+                "terminal": "2",
+                "at": "2025-05-22T21:35:00"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "2",
+                "at": "2025-05-22T22:40:00"
+              },
+              "carrierCode": "LH",
+              "number": "2484",
+              "aircraft": {
+                "code": "32N"
+              },
+              "operating": {
+                "carrierCode": "LH"
+              },
+              "duration": "PT2H5M",
+              "id": "8",
+              "numberOfStops": 0,
+              "blacklistedInEU": false
+            }
+          ]
+        }
+      ],
+      "price": {
+        "currency": "GBP",
+        "total": "321.02",
+        "base": "138.00",
+        "fees": [
+          {
+            "amount": "0.00",
+            "type": "SUPPLIER"
+          },
+          {
+            "amount": "0.00",
+            "type": "TICKETING"
+          }
+        ],
+        "grandTotal": "321.02"
+      },
+      "pricingOptions": {
+        "fareType": [
+          "PUBLISHED"
+        ],
+        "includedCheckedBagsOnly": true
+      },
+      "validatingAirlineCodes": [
+        "LH"
+      ],
+      "travelerPricings": [
+        {
+          "travelerId": "1",
+          "fareOption": "STANDARD",
+          "travelerType": "ADULT",
+          "price": {
+            "currency": "GBP",
+            "total": "321.02",
+            "base": "138.00"
+          },
+          "fareDetailsBySegment": [
+            {
+              "segmentId": "1",
+              "cabin": "ECONOMY",
+              "fareBasis": "VETCLSE0",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "V",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "2",
+              "cabin": "ECONOMY",
+              "fareBasis": "VETCLSE0",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "V",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "7",
+              "cabin": "ECONOMY",
+              "fareBasis": "TETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            },
+            {
+              "segmentId": "8",
+              "cabin": "ECONOMY",
+              "fareBasis": "TETCLSE4",
+              "brandedFare": "CLASSIC",
+              "brandedFareLabel": "CLASSIC",
+              "class": "T",
+              "includedCheckedBags": {
+                "quantity": 1
+              },
+              "includedCabinBags": {
+                "quantity": 1
+              },
+              "amenities": [
+                {
+                  "description": "CATERING ON EUROPE FLTS",
+                  "isChargeable": true,
+                  "amenityType": "MEAL",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "STANDARD SEAT RESERVATION",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "MILEAGE ACCRUAL",
+                  "isChargeable": false,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "UPGRADE ELIGIBILITY",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "PREFERRED SEAT RESERVATION",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE BEFORE DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                },
+                {
+                  "description": "CHANGE AFTER DEPARTURE",
+                  "isChargeable": true,
+                  "amenityType": "BRANDED_FARES",
+                  "amenityProvider": {
+                    "name": "BrandedFare"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

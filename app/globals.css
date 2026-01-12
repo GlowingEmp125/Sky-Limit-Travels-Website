@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 210 100% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 50% 96%;
+  --secondary-foreground: 210 50% 20%;
+  --background: 0 0% 100%;
+  --foreground: 210 50% 10%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 210 40% 40%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 210 40% 20%;
+  --border: 210 40% 90%;
+}
+
+.hero-gradient {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+}
+
+.destination-card:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}

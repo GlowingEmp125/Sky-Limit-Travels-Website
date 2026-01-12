@@ -1,0 +1,240 @@
+{
+  "timestamp": 1744928772912,
+  "data": [
+    {
+      "id": "mock-LHR-FRA-1",
+      "price": {
+        "total": "293.06",
+        "currency": "GBP"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-18T07:30:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-18T10:30:00.000Z"
+              },
+              "carrierCode": "LH",
+              "number": "101",
+              "duration": "PT2H30M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-25T11:45:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-25T14:45:00.000Z"
+              },
+              "carrierCode": "LH",
+              "number": "201",
+              "duration": "PT2H30M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-LHR-FRA-2",
+      "price": {
+        "total": "387.15",
+        "currency": "GBP"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-18T09:30:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-18T12:30:00.000Z"
+              },
+              "carrierCode": "AF",
+              "number": "102",
+              "duration": "PT2H30M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-25T13:45:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-25T16:45:00.000Z"
+              },
+              "carrierCode": "AF",
+              "number": "202",
+              "duration": "PT2H30M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-LHR-FRA-3",
+      "price": {
+        "total": "430.84",
+        "currency": "GBP"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-18T11:30:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-18T14:30:00.000Z"
+              },
+              "carrierCode": "EZ",
+              "number": "103",
+              "duration": "PT2H30M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-25T15:45:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-25T18:45:00.000Z"
+              },
+              "carrierCode": "EZ",
+              "number": "203",
+              "duration": "PT2H30M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-LHR-FRA-4",
+      "price": {
+        "total": "520.46",
+        "currency": "GBP"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-18T13:30:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-18T16:30:00.000Z"
+              },
+              "carrierCode": "FR",
+              "number": "104",
+              "duration": "PT2H30M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-25T17:45:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-25T20:45:00.000Z"
+              },
+              "carrierCode": "FR",
+              "number": "204",
+              "duration": "PT2H30M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mock-LHR-FRA-5",
+      "price": {
+        "total": "603.86",
+        "currency": "GBP"
+      },
+      "itineraries": [
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-18T15:30:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-18T18:30:00.000Z"
+              },
+              "carrierCode": "BA",
+              "number": "105",
+              "duration": "PT2H30M"
+            }
+          ]
+        },
+        {
+          "segments": [
+            {
+              "departure": {
+                "iataCode": "FRA",
+                "terminal": "1",
+                "at": "2025-04-25T19:45:00.000Z"
+              },
+              "arrival": {
+                "iataCode": "LHR",
+                "terminal": "5",
+                "at": "2025-04-25T22:45:00.000Z"
+              },
+              "carrierCode": "BA",
+              "number": "205",
+              "duration": "PT2H30M"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
