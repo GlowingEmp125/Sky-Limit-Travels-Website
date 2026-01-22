@@ -1,40 +1,34 @@
 import { PrismaClient } from '@prisma/client'
+import { PrismaPg } from "@prisma/adapter-pg";
 
 // Service role connection for admin operations
 // This bypasses RLS policies when your app needs full database access
 const createPrismaAdmin = () => {
+
   const isProduction = process.env.NODE_ENV === 'production'
+
   const adminUrl = process.env.POSTGRES_URL_NON_POOLING || process.env.DATABASE_URL
-  
+
   if (!adminUrl) {
     throw new Error('No database URL configured. Please set DATABASE_URL or POSTGRES_URL_NON_POOLING')
   }
-
-  return new PrismaClient({
-    datasources: {
-      db: {
-        url: adminUrl,
-      },
-    },
-  })
+  const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
+  return new PrismaClient({ adapter });
 }
 
 // Regular connection for public operations (with RLS enabled)
 const createPrismaPublic = () => {
+
   const isProduction = process.env.NODE_ENV === 'production'
+
   const publicUrl = process.env.POSTGRES_PRISMA_URL || process.env.DATABASE_URL
-  
+
   if (!publicUrl) {
     throw new Error('No database URL configured. Please set DATABASE_URL or POSTGRES_PRISMA_URL')
   }
 
-  return new PrismaClient({
-    datasources: {
-      db: {
-        url: publicUrl,
-      },
-    },
-  })
+  const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
+  return new PrismaClient({ adapter });
 }
 
 // Global instances
@@ -60,12 +54,12 @@ export async function executeAsAdmin<T>(
 ): Promise<T> {
   // Only set role for PostgreSQL (Supabase) databases
   const isPostgreSQL = process.env.POSTGRES_URL_NON_POOLING || process.env.POSTGRES_PRISMA_URL
-  
+
   if (isPostgreSQL) {
     // Set the role to service_role for this operation
     await prismaAdmin.$executeRaw`SET ROLE service_role;`
   }
-  
+
   try {
     const result = await operation(prismaAdmin)
     return result

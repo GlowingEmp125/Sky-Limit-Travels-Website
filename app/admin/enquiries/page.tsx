@@ -197,7 +197,7 @@ export default function EnquiriesPage() {
         } lg:translate-x-0 transition-transform duration-300 ease-in-out`}
       >
         <div className="p-6">
-          <div className="text-xl font-bold text-gray-800">Sky Limit Travels</div>
+          <div className="text-xl font-bold text-gray-800 ">Sky Limit Travels</div>
           <div className="text-sm text-gray-600">Admin Panel</div>
         </div>
 

@@ -16,9 +16,13 @@ import {
 } from 'lucide-react';
 
 export default function AdminDashboard() {
+
   const { data: session } = useSession();
+  
   const router = useRouter();
+  
   const [isLoaded, setIsLoaded] = useState(false);
+  
   const [refreshing, setRefreshing] = useState(false);
 
   // Mock data
@@ -73,7 +77,7 @@ export default function AdminDashboard() {
     router.push('/admin/logout');
   };
 
-  const formatDate = (date) => {
+  const formatDate = (date:any) => {
     return new Intl.DateTimeFormat('en-GB', {
       day: 'numeric',
       month: 'short',
@@ -81,7 +85,7 @@ export default function AdminDashboard() {
     }).format(date);
   };
 
-  const getStatusBadge = (status) => {
+  const getStatusBadge = (status:string) => {
     const baseClasses = "px-2 py-1 rounded-full text-xs font-medium";
     
     switch (status) {

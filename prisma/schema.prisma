@@ -1,17 +1,18 @@
 // This is your Prisma schema file for Supabase connection,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-generator client {
-  provider = "prisma-client-js"
-  previewFeatures = ["driverAdapters"]
-}
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // Connection pooling URL for Supabase
-  directUrl = env("POSTGRES_URL_NON_POOLING") // Direct connection URL for migrations
+  
+  // url       = env("POSTGRES_PRISMA_URL") // Connection pooling URL for Supabase
+  // directUrl = env("POSTGRES_URL_NON_POOLING") // Direct connection URL for migrations
 }
 
+generator client {
+  provider = "prisma-client-js"
+  // previewFeatures = ["driverAdapters"]
+}
 // Model for storing contact form enquiries
 model Enquiry {
   id            String       @id @default(uuid())
@@ -69,6 +70,58 @@ model Holiday {
   updatedAt   DateTime @updatedAt
 }
 
+
+model Destination {
+  id                      String    @id @default(cuid())
+  title                   String
+  description             String    @db.Text
+  destination             String
+  duration                String
+  price                   Float
+  slogan                  String?
+  discountUpTo            Float?
+  featured                Boolean   @default(false)
+  available               Boolean   @default(true)
+  destinationImage        String?
+  createdAt               DateTime  @default(now())
+  updatedAt               DateTime  @updatedAt
+  
+  landingPageDestinations LandingPageDestination[]
+  landingPageTips         LandingPageTip[]
+
+  @@map("destinations")
+}
+
+model LandingPageDestination {
+  id                String      @id @default(cuid())
+  from              String
+  destination       String
+  duration          String
+  price             Float
+  date              DateTime
+  stops             Int         @default(1)
+  destinationImage  String?
+  createdAt         DateTime    @default(now())
+  updatedAt         DateTime    @updatedAt
+  
+  destinationId     String
+  destinationRef    Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+
+  @@map("landing_page_destinations")
+}
+
+model LandingPageTip {
+  id            String      @id @default(cuid())
+  title         String
+  description   String      @db.Text
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  
+  destinationId String
+  destination   Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)
+
+  @@map("landing_page_tips")
+}
 // Trip status enum
 enum TripStatus {
   PENDING

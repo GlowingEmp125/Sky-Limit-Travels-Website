@@ -8,7 +8,7 @@ export async function GET() {
   try {
     // Check if user is authenticated
     const session = await getServerSession(authOptions);
-    
+
     if (!session) {
       return NextResponse.json(
         { error: 'Unauthorised' },

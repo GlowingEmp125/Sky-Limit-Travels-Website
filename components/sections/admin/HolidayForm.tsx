@@ -196,7 +196,7 @@ export default function HolidayForm({ initialData, isEditing = false }: HolidayF
               </div>
             )}
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
               <div className="space-y-3">
                 <div>
                   <Label htmlFor="title">Title</Label>
@@ -283,7 +283,7 @@ export default function HolidayForm({ initialData, isEditing = false }: HolidayF
                 </div>
               </div>
               
-              <div className="space-y-3">
+              <div className="space-y-3 ">
                 <div>
                   <Label htmlFor="description">Description</Label>
                   <Textarea
@@ -329,7 +329,7 @@ export default function HolidayForm({ initialData, isEditing = false }: HolidayF
                         type="file"
                         accept="image/*"
                         onChange={handleImageChange}
-                        className="sr-only"
+                        className="sr-only hidden"
                       />
                       
                       {imageFile && (
