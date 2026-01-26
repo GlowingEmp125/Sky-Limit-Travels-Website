@@ -1,6 +1,6 @@
 
 "use client";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -94,18 +94,21 @@ const deals = [
     price: 442,
   },
 ];
+interface Props {
+  landingPageDestinations: []
+}
 
-export default function FlightDeals() {
-  
+const FlightDeals: FC<Props> = ({ landingPageDestinations }) => {
+
   const [openModal, setOpenModal] = useState(false);
 
   const [currentDeal, setCurrentDeal] = useState<any>(null);
 
-  const handleOpen=(deal: any) => {
+  const handleOpen = (deal: any) => {
     setCurrentDeal(deal);
     setOpenModal(true);
   }
-  const handleClose=()=>{
+  const handleClose = () => {
     setOpenModal(false);
     setCurrentDeal(null);
   }
@@ -203,3 +206,5 @@ export default function FlightDeals() {
     </div>
   );
 }
+
+export default FlightDeals;

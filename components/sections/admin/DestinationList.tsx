@@ -18,6 +18,7 @@ import { useRouter } from 'next/navigation';
 interface destination {
   id: string;
   title: string;
+  from: string;
   description: string;
   destination: string;
   duration: string;
@@ -27,6 +28,8 @@ interface destination {
   available: boolean;
   createdAt: string;
   updatedAt: string;
+  slogan?: string
+  popular: string
 }
 
 export default function DestinationList() {
@@ -52,7 +55,6 @@ export default function DestinationList() {
 
         const data = await response.json();
 
-        console.log("data============>", data);
         setDestinations(data);
       } catch (err) {
         console.error('Error fetching destinations:', err);
@@ -144,22 +146,22 @@ export default function DestinationList() {
                       <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>Title</TableHead>
                       <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>From</TableHead>
                       <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>Destination</TableHead>
-                      <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>Time</TableHead>
-                      <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>Price</TableHead>
-                      <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>Popular</TableHead>
+                      <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>Available</TableHead>
+                      <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>Featured</TableHead>
+                      <TableHead className='text-left py-3 px-4 font-semibold text-gray-700  truncate max-w-[200px] '>Popular (%)</TableHead>
                       <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>Slogan</TableHead>
-                      <TableHead className='text-left py-3 px-4 font-semibold text-gray-700'>Discount upto (%)</TableHead>
-                      <TableHead className="text-right  py-3 px-4 font-semibold text-gray-700">Actions</TableHead>
+                      <TableHead className='text-left py-3 px-4 font-semibold text-gray-700  truncate max-w-[200px] '>Discount upto (%)</TableHead>
+                      <TableHead className="text-center  py-3 px-4 font-semibold text-gray-700">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {destinations.map((destination) => (
+                    {destinations.map((destination: any) => (
                       <TableRow key={destination.id}>
                         <TableCell className="font-medium">
                           <div className="flex items-center gap-3">
-                            {destination.imageUrl ? (
+                            {destination.destinationImage ? (
                               <img
-                                src={destination.imageUrl}
+                                src={destination.destinationImage}
                                 alt={destination.title}
                                 className="w-12 h-12 rounded-lg object-cover"
                               />
@@ -171,11 +173,14 @@ export default function DestinationList() {
 
                           </div>
                         </TableCell>
+
                         <TableCell className='truncate max-w-[200px] '>
                           {destination.title.length > 30 ? destination.title.slice(0, 30) + "..." : destination.title}</TableCell>
-                        <TableCell>{destination.destination}</TableCell>
-                        <TableCell>{destination.duration}</TableCell>
-                        <TableCell>£{destination.price.toFixed(2)}</TableCell>
+
+                        <TableCell className='truncate max-w-[200px] '>{destination.from.length > 30 ? destination.from.slice(0, 30) + "..." : destination.from}</TableCell>
+
+                        <TableCell className='truncate max-w-[200px] '>{destination.destination.length > 30 ? destination.destination.slice(0, 30) + "..." : destination.destination}</TableCell>
+
                         <TableCell>
                           <span
                             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${destination.available
@@ -185,15 +190,24 @@ export default function DestinationList() {
                           >
                             {destination.available ? 'Available' : 'Unavailable'}
                           </span>
-                          {destination.featured && (
+                        </TableCell>
+                        <TableCell>
+                          {destination.featured ? (
                             <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                               Featured
                             </span>
-                          )}
+                          ) : "--"}
                         </TableCell>
+                       
+                        <TableCell className='text-center truncate max-w-[200px] '>{destination.popular} </TableCell>
+                       
+                        <TableCell className='truncate max-w-[200px]'>{destination?.slogan?.length > 30 ? destination?.slogan?.slice(0, 30) + "..." : destination?.slogan}</TableCell>
+                       
+                        <TableCell className='text-center'>{destination.discountUpTo}</TableCell>
+                       
                         <TableCell className="text-right">
                           <div className="flex items-center justify-end gap-2">
-                            <Link href={`/destinations/${destination.id}`}>
+                            <Link href={`/admin/destinations/${destination.id}`}>
                               <Button variant="ghost" size="icon">
                                 <Eye className="w-4 h-4" />
                               </Button>

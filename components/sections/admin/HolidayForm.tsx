@@ -1,15 +1,14 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { Switch } from '@/components/ui/switch';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowLeft, Upload, Loader2 } from 'lucide-react';
-import Image from 'next/image';
+import { Textarea } from '@/components/ui/textarea';
+import { ArrowLeft, Loader2, Upload } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 interface Holiday {
   id?: string;

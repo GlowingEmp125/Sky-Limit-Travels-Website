@@ -4,28 +4,54 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth';
 
 // GET /api/admin/destination
-export async function GET() {
+export async function GET(request: NextRequest) {
     try {
         // Check if user is authenticated
-        const session = await getServerSession(authOptions);
+        // const session = await getServerSession(authOptions);
 
-        if (!session) {
-            return NextResponse.json(
-                { error: 'Unauthorised' },
-                { status: 401 }
-            );
+        // if (!session) {
+        //     return NextResponse.json(
+        //         { error: 'Unauthorised' },
+        //         { status: 401 }
+        //     );
+        // }
+
+        const { searchParams } = new URL(request.url);
+
+        const search = searchParams.get('slogan');
+
+        const featured = searchParams.get('featured');
+
+        const available = searchParams.get('available');
+        const where: any = {};
+
+        if (featured) {
+            where.featured = featured === 'true';
+        }
+
+        if (available) {
+            where.available = available === 'true';
+        }
+
+        if (search) {
+            where.slogan = {
+                contains: search,
+                mode: 'insensitive',
+            };
         }
 
         // Use executeAsAdmin for secure database access
+
         const destination = await executeAsAdmin(async (prisma) => {
             return await prisma.destination.findMany({
+                where,
                 orderBy: {
                     createdAt: 'desc'
                 }
             });
-        });
-
+        })
         return NextResponse.json(destination);
+
     } catch (error) {
         console.error('Error fetching destination:', error);
         return NextResponse.json(
@@ -57,6 +83,8 @@ export async function POST(request: NextRequest) {
                 data: {
                     title: data.title,
                     description: data.description,
+                    from: data.from,
+                    popular: data.popular,
                     destination: data.destination,
                     duration: data.duration,
                     price: parseFloat(data.price),
@@ -65,7 +93,7 @@ export async function POST(request: NextRequest) {
                     destinationImage: data.destinationImage || null,
                     featured: data.featured || false,
                     available: data.available || true,
-                    
+
                     // Create related landing page destinations
                     landingPageDestinations: {
                         create: data.landingPageDestinations?.map((lpd: any) => ({
@@ -78,7 +106,7 @@ export async function POST(request: NextRequest) {
                             destinationImage: lpd.destinationImage || null
                         })) || []
                     },
-                    
+
                     // Create related landing page tips
                     landingPageTips: {
                         create: data.landingPageTips?.map((tip: any) => ({

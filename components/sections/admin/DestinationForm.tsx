@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -30,10 +30,12 @@ interface LandingPageTip {
 interface Destination {
   id?: string;
   title: string;
+  from: string,
   description: string;
   destination: string;
   duration: string;
-  price: string;
+  price: number | null;
+  popular: string,
   slogan: string | null;
   discountUpTo: number | null;
   destinationImage: string | null;
@@ -53,9 +55,11 @@ interface DestinationFormProps {
 const defaultDestination: Destination = {
   title: '',
   description: '',
+  from: '',
   destination: '',
   duration: '',
-  price: '',
+  price: null,
+  popular: '',
   slogan: null,
   discountUpTo: null,
   destinationImage: null,
@@ -116,7 +120,7 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
   const [uploadingLpImages, setUploadingLpImages] = useState<{ [key: number]: boolean }>({});
 
   // Handle main form input changes
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -144,37 +148,22 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
       reader.readAsDataURL(file);
     }
   };
-
   const handleImageUpload = async () => {
     if (!imageFile) return null;
 
-    try {
-      setUploadingImage(true);
-      const formData = new FormData();
-      formData.append('file', imageFile);
+    const fd = new FormData();
+    fd.append('file', imageFile);
 
-      const response = await fetch('/api/admin/upload', {
-        method: 'POST',
-        body: formData,
-      });
+    const res = await fetch('/api/admin/upload', {
+      method: 'POST',
+      body: fd,
+    });
 
-      if (!response.ok) throw new Error('Failed to upload image');
-      const data = await response.json();
-
-      setFormData((prev) => ({
-        ...prev,
-        destinationImage: data.imageUrl,
-      }));
-
-      return data.imageUrl;
-    } catch (err) {
-      console.error('Error uploading image:', err);
-      setError('Failed to upload image. Please try again.');
-      return null;
-    } finally {
-      setUploadingImage(false);
-    }
+    const data = await res.json();
+    return data.imageUrl || null;
   };
+
+
 
 
 
@@ -185,7 +174,6 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
     const destinations = formData.landingPageDestinations;
     const lastDestination = destinations[destinations.length - 1]
 
-    console.log("lastDestination========>", lastDestination);
 
     if (!isDestinationValid(lastDestination)) {
       alert("Please complete the last Landing Page Destination first.");
@@ -304,18 +292,29 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
     setIsSubmitting(true);
     setError(null);
 
+    console.log("imageFile==========>", imageFile);
     try {
       // Upload main image if exists
+      let mainImageUrl = formData.destinationImage;
+
       if (imageFile) {
-        await handleImageUpload();
+        mainImageUrl = await handleImageUpload();
       }
 
-      // Upload all landing page images
-      for (let i = 0; i < formData.landingPageDestinations.length; i++) {
+      const updatedLandingDestinations = [...formData.landingPageDestinations];
+
+      for (let i = 0; i < updatedLandingDestinations.length; i++) {
         if (lpImageFiles[i]) {
-          await handleLpImageUpload(i);
+          const imageUrl = await handleLpImageUpload(i);
+          updatedLandingDestinations[i].destinationImage = imageUrl;
         }
       }
+
+      const payload = {
+        ...formData,
+        destinationImage: mainImageUrl,
+        landingPageDestinations: updatedLandingDestinations,
+      };
 
       const url = isEditing
         ? `/api/admin/destination/${initialData?.id}`
@@ -327,7 +326,7 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) throw new Error('Failed to save Destination');
@@ -379,6 +378,17 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
                   </div>
 
                   <div>
+                    <Label htmlFor="from">from</Label>
+                    <Input
+                      id="from"
+                      name="from"
+                      value={formData.from}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div>
                     <Label htmlFor="destination">Destination</Label>
                     <Input
                       id="destination"
@@ -386,6 +396,19 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
                       value={formData.destination}
                       onChange={handleChange}
                       required
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="Popular">Popular (%)</Label>
+                    <Input
+                      id="popular"
+                      name="popular"
+                      type="number"
+                      value={formData.popular || ''}
+                      onChange={handleChange}
+                      min="0"
+                      max="100"
+                    // step="0.01"
                     />
                   </div>
 
@@ -408,10 +431,9 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
                         id="price"
                         name="price"
                         type="number"
-                        value={formData.price}
+                        value={formData.price || ""}
                         onChange={handleChange}
-                        // min="0"
-                        // step="0.01"
+                        min="0"
                         required
                       />
                     </div>
@@ -420,12 +442,18 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="slogan">Slogan</Label>
-                      <Input
+                      <select
                         id="slogan"
                         name="slogan"
-                        value={formData.slogan || ''}
+                        className="w-full h-10 bg-white border border-gray-300 rounded-md px-3 text-gray-900"
+                        value={formData.slogan || ""}
                         onChange={handleChange}
-                      />
+                      >
+                        {
+                          ['Most Popular', 'Quick Escape', 'Best Value', 'Budget Friendly'].map(num => (
+                            <option key={num} value={num}>{num}</option>
+                          ))}
+                      </select>
                     </div>
                     <div>
                       <Label htmlFor="discountUpTo">Discount up to (%)</Label>

@@ -406,7 +406,7 @@ const NoResultsDisplay = ({ onReset, onNewSearch }: any) => (
     </div>
 );
 
-const LoadingFullPage = () => (
+export const LoadingFullPage = () => (
     <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
         <Plane className="h-12 w-12 text-blue-600 animate-pulse mb-4" />
         <p className="text-lg text-slate-700 font-medium">Searching for flights...</p>

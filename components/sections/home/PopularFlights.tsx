@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Plane, TrendingUp, Clock, MapPin, Sparkles, ArrowRight, Tag, Users } from 'lucide-react';
@@ -95,7 +95,7 @@ const popularRoutes: PopularRoute[] = [
     duration: '2h 15m',
     popularity: 82,
     savings: 'Save up to 15%',
-    image: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?ixlib=rb-4.0.3&q=80&w=600',
+    image: 'https://images.unsplash.com/photo-1549918864-48ac978761a4?ixlib=rb-4.0.3&q=80&w=600',
     description: 'Discover elegant boulevards, world-class museums and authentic tapas',
     category: 'Cultural'
   },
@@ -147,11 +147,49 @@ const countryDestinations = [
 ];
 
 export default function PopularFlights() {
+
   const router = useRouter();
+
+  const [destinations, setDestinations] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(false);
+
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const handleRouteSelect = (route: PopularRoute) => {
+  useEffect(() => {
+    const fetchDestinations = async () => {
+      try {
+        setIsLoading(true);
+
+        const params = new URLSearchParams({
+          featured: 'true',
+          available: 'true',
+          slogan: activeCategory === "all" ? "" : activeCategory
+        });
+
+        const response = await fetch(`/api/admin/destination?${params.toString()}`);
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch destinations');
+        }
+
+        const data = await response.json();
+
+        setDestinations(data);
+      } catch (err) {
+        console.error('Error fetching destinations:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchDestinations();
+  }, [activeCategory]);
+
+
+  const handleRouteSelect = (route: any) => {
     // Get departure date (tomorrow)
+
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     const departureDate = tomorrow.toISOString().split('T')[0];
@@ -159,21 +197,18 @@ export default function PopularFlights() {
     // Navigate to search results
     const searchParams = new URLSearchParams({
       type: 'flight',
-      departureAirport: route.origin,
+      departureAirport: route.from,
       destination: route.destination,
       departureDate,
       adults: '1',
-      children: '0'
+      children: '0',
+      id: route.id
     });
 
     router.push(`/search?${searchParams.toString()}`);
   };
 
   const categories = ['all', 'Most Popular', 'Quick Escape', 'Best Value', 'Budget Friendly'];
-  
-  const filteredRoutes = activeCategory === 'all' 
-    ? popularRoutes 
-    : popularRoutes.filter(route => route.category === activeCategory);
 
   return (
     <div className="bg-gray-50 py-20">
@@ -198,105 +233,163 @@ export default function PopularFlights() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-white text-gray-600 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 shadow-sm'
-              }`}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${activeCategory === category
+                ? 'bg-blue-600 text-white shadow-lg'
+                : 'bg-white text-gray-600 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 shadow-sm'
+                }`}
             >
               {category === 'all' ? 'All Routes' : category}
             </button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {filteredRoutes.map((route, index) => (
-            <Card 
-              key={route.id} 
-              className="group relative overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer bg-white hover:-translate-y-1"
-              onClick={() => handleRouteSelect(route)}
-            >
-              {/* Background Image */}
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={route.image || '/images/default-destination.jpg'}
-                  alt={`${route.destinationName} destination`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                
-                {/* Category Badge */}
-                {route.category && (
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center gap-1 bg-white/95 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-lg shadow-sm">
-                      <Sparkles className="h-3 w-3" />
-                      {route.category}
-                    </span>
-                  </div>
-                )}
-
-                {/* Savings Badge */}
-                {route.savings && (
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg">
-                      {route.savings}
-                    </span>
-                  </div>
-                )}
-
-                {/* Route Info Overlay */}
-                <div className="absolute bottom-4 left-4 right-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="text-white">
-                      <h3 className="text-xl font-bold">{route.destinationName}</h3>
-                      <p className="text-white/80 text-sm">{route.origin} → {route.destination}</p>
-                    </div>
-                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
-                      <Plane className="h-5 w-5 text-white" />
-                    </div>
+        {isLoading && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className="animate-pulse rounded-sm border border-gray-200 overflow-hidden"
+              >
+                <div className="h-48 bg-gray-200" />
+                <div className="p-6 space-y-4">
+                  <div className="h-4 bg-gray-200 rounded w-3/4" />
+                  <div className="h-3 bg-gray-200 rounded w-full" />
+                  <div className="h-3 bg-gray-200 rounded w-5/6" />
+                  <div className="flex justify-between items-center pt-4">
+                    <div className="h-6 bg-gray-200 rounded w-24" />
+                    <div className="h-8 bg-gray-200 rounded w-20" />
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        )}
+        {destinations.length === 0 ? (
+          <div className="flex flex-col items-center justify-center my-24 text-center">
+            <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-10 h-10 text-gray-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 100-15 7.5 7.5 0 000 15z"
+                />
+              </svg>
+            </div>
 
-              <CardContent className="p-6">
-                {/* Description */}
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {route.description}
-                </p>
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+              No destinations found
+            </h2>
 
-                {/* Flight Details */}
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Clock className="h-4 w-4 text-blue-500" />
-                    <span>{route.duration}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Users className="h-4 w-4 text-green-500" />
-                    <span>{route.popularity}% popular</span>
-                  </div>
-                </div>
+            <p className="text-gray-500 mt-2 max-w-md">
+              We couldn’t find any destinations matching your filters.
+              Try adjusting your search to default.
+            </p>
 
-                {/* Price and Action */}
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-3xl font-bold text-blue-600">
-                      £{route.price}
+            <button
+              onClick={() => setActiveCategory("all")} // optional
+              className="mt-6 inline-flex items-center px-4 py-2 text-sm font-medium rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
+            >
+              Reset Filters
+            </button>
+          </div>
+        )
+
+          : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {destinations.map((route: any, index) => (
+              <Card
+                key={route.id}
+                className="group relative overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer bg-white hover:-translate-y-1"
+                onClick={() => handleRouteSelect(route)}
+              >
+                {/* Background Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={route.destinationImage || '/images/default-destination.jpg'}
+                    alt={`${route.title
+                      } destination`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+                  {/* Category Badge */}
+                  {route.slogan && (
+                    <div className="absolute top-4 left-4">
+                      <span className="inline-flex items-center gap-1 bg-white/95 backdrop-blur-sm text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-lg shadow-sm">
+                        <Sparkles className="h-3 w-3" />
+                        {route.slogan}
+                      </span>
                     </div>
-                    <div className="text-xs text-gray-500">from per person</div>
+                  )}
+
+                  {/* Savings Badge */}
+                  {route.discountUpTo && (
+                    <div className="absolute top-4 right-4">
+                      <span className="bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-lg">
+                        Save up to {route.discountUpTo} %
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Route Info Overlay */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="text-white">
+                        <h3 className="text-xl font-bold">{route.title}</h3>
+                        <p className="text-white/80 text-sm">{route.from} → {route.destination}</p>
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                        <Plane className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
                   </div>
-                  <Button 
-                    size="sm"
-                    className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300"
-                  >
-                    Book Now
-                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+
+                <CardContent className="p-6">
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                    {route.description}
+                  </p>
+
+                  {/* Flight Details */}
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <Clock className="h-4 w-4 text-blue-500" />
+                      <span>{route.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <Users className="h-4 w-4 text-green-500" />
+                      <span>{route.popular}% popular</span>
+                    </div>
+                  </div>
+
+                  {/* Price and Action */}
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-3xl font-bold text-blue-600">
+                        £{route.price}
+                      </div>
+                      <div className="text-xs text-gray-500">from per person</div>
+                    </div>
+                    <Button
+                      size="sm"
+                      className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300"
+                    >
+                      Book Now
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>}
       </section>
 
       {/* Popular Countries Section */}
@@ -316,8 +409,8 @@ export default function PopularFlights() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {countryDestinations.map((country, index) => (
-            <Card 
-              key={country.id} 
+            <Card
+              key={country.id}
               className="group relative overflow-hidden border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white hover:-translate-y-1"
               onClick={() => router.push(country.path)}
             >
@@ -329,7 +422,7 @@ export default function PopularFlights() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-                
+
                 {/* Price Badge */}
                 <div className="absolute top-4 right-4">
                   <div className="bg-white/95 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
@@ -342,7 +435,7 @@ export default function PopularFlights() {
                 <div className="absolute bottom-6 left-6 right-6">
                   <h3 className="text-2xl font-bold text-white mb-2">{country.name}</h3>
                   <p className="text-white/90 text-sm mb-4 leading-relaxed">{country.description}</p>
-                  
+
                   {/* Destination Pills */}
                   <div className="flex flex-wrap gap-2">
                     {country.destinations.slice(0, 3).map((dest, idx) => (
@@ -358,9 +451,9 @@ export default function PopularFlights() {
                   </div>
                 </div>
               </div>
-              
+
               <CardContent className="p-6">
-                <Button 
+                <Button
                   className="w-full bg-slate-800 hover:bg-slate-700 text-white border-0 shadow-md hover:shadow-lg transition-all duration-300"
                 >
                   Explore {country.name}
@@ -380,17 +473,17 @@ export default function PopularFlights() {
               <div className="absolute bottom-8 right-8 w-32 h-32 border border-white/30 rounded-full"></div>
               <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-white/40 rounded-full"></div>
             </div>
-            
+
             <div className="relative z-10">
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
                 Can't Find Your Dream Destination?
               </h3>
               <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
-                Search from hundreds of airports worldwide and discover amazing deals on flights to any destination. 
+                Search from hundreds of airports worldwide and discover amazing deals on flights to any destination.
                 Our travel specialists are here to help you plan the perfect trip.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
+                <Button
                   onClick={() => router.push('/#search')}
                   size="lg"
                   className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-xl px-8 py-4 text-lg font-semibold"
@@ -398,7 +491,7 @@ export default function PopularFlights() {
                   <MapPin className="mr-2 h-5 w-5" />
                   Search All Destinations
                 </Button>
-                <Button 
+                <Button
                   onClick={() => router.push('/plan-trip')}
                   variant="outline"
                   size="lg"
