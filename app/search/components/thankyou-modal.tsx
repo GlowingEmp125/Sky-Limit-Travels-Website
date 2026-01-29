@@ -15,6 +15,7 @@ interface ThankYouModalProps {
     onClose: () => void;
 }
 const ThankYouModal: FC<ThankYouModalProps> = ({ open, onClose }) => {
+    
     return (
         <Dialog open={open} onOpenChange={onClose}>
 

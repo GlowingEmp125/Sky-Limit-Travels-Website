@@ -16,18 +16,18 @@ generator client {
 // Model for storing contact form enquiries
 model Enquiry {
   id             String        @id @default(uuid())
-  firstName      String
-  lastName       String
-  email          String
+  firstName      String?
+  lastName       String?
+  email          String?
   phone          String?
-  message        String
-  type           String        @default("GENERAL")
+  message        String?
+  type           String?        @default("GENERAL")
   flightDetails  String?
   holidayDetails String?
   packageDetails String?
   status         EnquiryStatus @default(NEW)
   createdAt      DateTime      @default(now())
-  updatedAt      DateTime      @updatedAt
+  updatedAt      DateTime     @updatedAt
 }
 
 // Status of enquiries
@@ -73,12 +73,12 @@ model Holiday {
 model Destination {
   id               String   @id @default(cuid())
   title            String
-  // from             String
+  from             String
   description      String   @db.Text
   destination      String
   duration         String
   price            Float
-  // popular          String
+  popular          String
   slogan           String?
   discountUpTo     Float?
   featured         Boolean  @default(false)
@@ -94,16 +94,25 @@ model Destination {
 }
 
 model LandingPageDestination {
-  id               String   @id @default(cuid())
+  id String @id @default(cuid())
+
   from             String
   destination      String
-  duration         String
-  price            Float
   date             DateTime
   stops            Int      @default(1)
   destinationImage String?
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+
+  returnFrom        String
+  returnDestination String
+  returnDate        DateTime
+  returnStops   Int    @default(1)
+  returnDestinationImage String?
+
+  duration String
+  price    Float
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   destinationId  String
   destinationRef Destination @relation(fields: [destinationId], references: [id], onDelete: Cascade)

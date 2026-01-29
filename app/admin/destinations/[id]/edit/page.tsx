@@ -18,7 +18,7 @@ export default function EditDestinationPage({ params }: { params: { id: string }
 
     useEffect(() => {
 
-        const formatDateForInput = (date:Date) => {
+        const formatDateForInput = (date: Date) => {
             if (!date) return '';
             return new Date(date).toISOString().split('T')[0];
         };
@@ -40,6 +40,7 @@ export default function EditDestinationPage({ params }: { params: { id: string }
                 let landingPageDestinations = data?.landingPageDestinations.map((item: any) => ({
                     ...item,
                     date: formatDateForInput(item.date),
+                    returnDate: formatDateForInput(item.returnDate)
 
                 }))
 

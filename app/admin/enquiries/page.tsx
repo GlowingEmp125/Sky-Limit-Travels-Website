@@ -33,13 +33,13 @@ type Pagination = {
 export default function EnquiriesPage() {
 
   const { data: session, status } = useSession();
-  
+
   const router = useRouter();
-  
+
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  
+
   const [enquiries, setEnquiries] = useState<Enquiry[]>([]);
-  
+
   const [pagination, setPagination] = useState<Pagination>({
     total: 0,
     page: 1,
@@ -62,7 +62,7 @@ export default function EnquiriesPage() {
       }
 
       const response = await fetch(`/api/admin/enquiries?${queryParams.toString()}`);
-      
+
       if (!response.ok) {
         throw new Error('Failed to fetch enquiries');
       }
@@ -166,7 +166,7 @@ export default function EnquiriesPage() {
   // Parse and format flight route for display
   const getFlightRouteDisplay = (enquiry: Enquiry): string | null => {
     if (!enquiry.flightDetails) return null;
-    
+
     try {
       const flightDetails = JSON.parse(enquiry.flightDetails);
       const origin = flightDetails.originCity || getCityAndCountry(flightDetails.origin);
@@ -192,9 +192,8 @@ export default function EnquiriesPage() {
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-10 w-64 bg-white shadow-lg transform ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } lg:translate-x-0 transition-transform duration-300 ease-in-out`}
+        className={`fixed inset-y-0 left-0 z-10 w-64 bg-white shadow-lg transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          } lg:translate-x-0 transition-transform duration-300 ease-in-out`}
       >
         <div className="p-6">
           <div className="text-xl font-bold text-gray-800 ">Sky Limit Travels</div>
@@ -308,7 +307,7 @@ export default function EnquiriesPage() {
                   ) : (
                     enquiries.map((enquiry) => {
                       const flightRoute = getFlightRouteDisplay(enquiry);
-                      
+
                       return (
                         <tr key={enquiry.id} className="border-b border-gray-100 hover:bg-gray-50">
                           <td className="py-3 px-4">
@@ -386,22 +385,20 @@ export default function EnquiriesPage() {
                   <button
                     onClick={() => handlePageChange(pagination.page - 1)}
                     disabled={pagination.page === 1}
-                    className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${
-                      pagination.page === 1
+                    className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${pagination.page === 1
                         ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                         : 'bg-white text-gray-700 hover:bg-gray-50'
-                    }`}
+                      }`}
                   >
                     Previous
                   </button>
                   <button
                     onClick={() => handlePageChange(pagination.page + 1)}
                     disabled={pagination.page === pagination.totalPages}
-                    className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${
-                      pagination.page === pagination.totalPages
+                    className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${pagination.page === pagination.totalPages
                         ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                         : 'bg-white text-gray-700 hover:bg-gray-50'
-                    }`}
+                      }`}
                   >
                     Next
                   </button>
@@ -421,11 +418,10 @@ export default function EnquiriesPage() {
                       <button
                         onClick={() => handlePageChange(pagination.page - 1)}
                         disabled={pagination.page === 1}
-                        className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium ${
-                          pagination.page === 1
+                        className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium ${pagination.page === 1
                             ? 'text-gray-300 cursor-not-allowed'
                             : 'text-gray-500 hover:bg-gray-50'
-                        }`}
+                          }`}
                       >
                         <span className="sr-only">Previous</span>
                         <ChevronLeft className="h-5 w-5" />
@@ -434,11 +430,10 @@ export default function EnquiriesPage() {
                         <button
                           key={page}
                           onClick={() => handlePageChange(page)}
-                          className={`relative inline-flex items-center px-4 py-2 border text-sm font-medium ${
-                            page === pagination.page
+                          className={`relative inline-flex items-center px-4 py-2 border text-sm font-medium ${page === pagination.page
                               ? 'z-10 bg-blue-50 border-blue-500 text-blue-600'
                               : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50'
-                          }`}
+                            }`}
                         >
                           {page}
                         </button>
@@ -446,11 +441,10 @@ export default function EnquiriesPage() {
                       <button
                         onClick={() => handlePageChange(pagination.page + 1)}
                         disabled={pagination.page === pagination.totalPages}
-                        className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium ${
-                          pagination.page === pagination.totalPages
+                        className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium ${pagination.page === pagination.totalPages
                             ? 'text-gray-300 cursor-not-allowed'
                             : 'text-gray-500 hover:bg-gray-50'
-                        }`}
+                          }`}
                       >
                         <span className="sr-only">Next</span>
                         <ChevronRight className="h-5 w-5" />

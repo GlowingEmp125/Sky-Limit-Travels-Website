@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth';
+import { executeAsAdmin } from '@/lib/prisma-admin';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,7 +10,7 @@ export async function GET() {
   try {
     // Check if user is authenticated
     const session = await getServerSession(authOptions);
-    
+
     if (!session) {
       return NextResponse.json(
         { error: 'Unauthorised' },
@@ -18,12 +19,14 @@ export async function GET() {
     }
 
     // Get 5 most recent enquiries
-    const recentEnquiries = await prisma.enquiry.findMany({
+    const recentEnquiries = await executeAsAdmin(
+      async (prisma) => await prisma.enquiry.findMany({
       take: 5,
       orderBy: {
         createdAt: 'desc'
       }
-    });
+    }));
+
 
     // Ensure we always return an array even if there's an error
     const safeEnquiries = Array.isArray(recentEnquiries) ? recentEnquiries : [];

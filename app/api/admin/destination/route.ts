@@ -97,13 +97,21 @@ export async function POST(request: NextRequest) {
                     // Create related landing page destinations
                     landingPageDestinations: {
                         create: data.landingPageDestinations?.map((lpd: any) => ({
+
                             from: lpd.from,
                             destination: lpd.destination,
-                            duration: lpd.duration,
-                            price: parseFloat(lpd.price),
                             date: new Date(lpd.date),
                             stops: parseInt(lpd.stops) || 1,
-                            destinationImage: lpd.destinationImage || null
+                            destinationImage: lpd.destinationImage || null,
+
+                            returnFrom: lpd.returnFrom,
+                            returnDestination: lpd.returnDestination,
+                            returnDate: new Date(lpd.returnDate),
+                            returnStops: parseInt(lpd.returnStops) || 1,
+                            returnDestinationImage: lpd.returnDestinationImage || null,
+
+                            duration: lpd.duration,
+                            price: parseFloat(lpd.price),
                         })) || []
                     },
 

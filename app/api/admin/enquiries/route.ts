@@ -27,8 +27,8 @@ export async function GET(request: Request) {
     const skip = (page - 1) * limit;
 
     // Build query
-    const where = statusParam 
-      ? { status: statusParam as EnquiryStatus } 
+    const where = statusParam
+      ? { status: statusParam as EnquiryStatus }
       : {};
 
     // Use executeAsAdmin for secure database access
@@ -101,4 +101,37 @@ export async function PATCH(request: Request) {
       { status: 500 }
     );
   }
-} 
+}
+
+export async function POST(request: Request) {
+  try {
+
+
+    // Get destination data from request body
+    const data = await request.json();
+
+    const { firstName, lastName, email, phone } = data;
+
+    // Use executeAsAdmin for secure database access
+    const enquiry = await executeAsAdmin(async (prisma) => {
+      return await prisma.enquiry.create({
+        data: {
+          firstName: firstName || "",
+          lastName: lastName || "",
+          email: email || "",
+          phone: phone || "",
+          message: data.message || "",
+          status: "NEW",
+        }
+      });
+    });
+
+    return NextResponse.json(enquiry, { status: 201 });
+  } catch (error) {
+    console.error('Error creating enquiry:', error);
+    return NextResponse.json(
+      { error: 'Failed to create enquiry' },
+      { status: 500 }
+    );
+  }
+}

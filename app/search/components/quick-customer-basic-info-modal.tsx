@@ -12,9 +12,10 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Info, Mail, Phone, User } from "lucide-react";
-import { FC, useState } from "react";
+import { Info, Loader2, Mail, Phone, User } from "lucide-react";
+import { ChangeEvent, FC, InputEvent, useState } from "react";
 import ThankYouModal from "./thankyou-modal";
+import { useRouter } from "next/navigation";
 
 interface QuickCustomerBasicInfoModalProps {
   open: boolean;
@@ -23,20 +24,26 @@ interface QuickCustomerBasicInfoModalProps {
 
 const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ open, onClose }) => {
 
-  const [name, setName] = useState('');
 
-  const [email, setEmail] = useState('');
-
-  const [phone, setPhone] = useState('');
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: ""
+  })
 
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [thankYouOpen, setThankYouOpen] = useState(false);
+
+  const router = useRouter();
 
   const validateForm = () => {
     const errors: Record<string, string> = {};
 
-    if (!phone) {
+    if (!data.phone) {
       errors.phone = 'Please enter your phone number';
     }
 
@@ -46,19 +53,56 @@ const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ ope
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateForm()) {
-      return;
+    try {
+
+      if (!validateForm()) {
+        return;
+      }
+      // Process form submission
+      const { firstName, lastName, email, phone } = data;
+
+      const payload = { firstName, lastName, email, phone }
+
+      setIsSubmitting(true);
+      setFormErrors({});
+
+
+      const response = await fetch('/api/admin/enquiries', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) throw new Error('Failed to submit enquiry');
+
+      handleClose();
+      setThankYouOpen(true);
+
+    } catch (err) {
+
+      console.error('Error saving Destination:', err);
+
+    } finally {
+      setIsSubmitting(false);
     }
-    // Process form submission
-    console.log({ name, email, phone });
-    handleClose();
-    setThankYouOpen(true);
   };
 
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+
+    setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+  }
+
   const handleClose = () => {
-    setName('');
-    setEmail('');
-    setPhone('');
+    setData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: ""
+    })
     setFormErrors({});
     onClose();
   }
@@ -74,14 +118,30 @@ const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ ope
           <div className="space-y-2">
             <label className="text-sm font-medium text-gray-700 flex items-center">
               <User className="w-4 h-4 mr-2 text-blue-600" />
-              Full Name
+              First Name
             </label>
             <Input
               type="text"
+              name="firstName"
               placeholder='Enter Full Name'
               className={`w-full h-12 bg-white border-gray-300 text-gray-900`}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={data.firstName}
+              onChange={handleChange}
+            />
+
+          </div>
+          <div className="space-y-2">
+            <label className="text-sm font-medium text-gray-700 flex items-center">
+              <User className="w-4 h-4 mr-2 text-blue-600" />
+              Last Name
+            </label>
+            <Input
+              type="text"
+              name="lastName"
+              placeholder='Enter Full Name'
+              className={`w-full h-12 bg-white border-gray-300 text-gray-900`}
+              value={data.lastName}
+              onChange={handleChange}
             />
 
           </div>
@@ -94,8 +154,8 @@ const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ ope
               type="email"
               placeholder='Enter Email'
               className={`w-full h-12 bg-white border-gray-300 text-gray-900`}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={data.email}
+              onChange={handleChange}
             />
 
           </div>
@@ -106,12 +166,14 @@ const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ ope
             </label>
             <Input
               type="text"
+              name="phone"
               placeholder='Enter Phone No'
               className={`w-full h-12 bg-white border-gray-300 text-gray-900
                            ${formErrors.phone ? 'border-red-500 focus:ring-red-200' : ''}
                           `}
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              value={data.phone}
+              onChange={handleChange}
+            // onChange={(e) => setPhone(e.target.value)}
             />
             {formErrors.phone && (
               <div className="text-xs text-red-500 flex items-center mt-1">
@@ -127,12 +189,24 @@ const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ ope
           <DialogClose asChild>
             <Button variant="outline" onClick={handleClose}>Cancel</Button>
           </DialogClose>
-          <Button onClick={handleSubmit} className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md"  >Submit</Button>
+          <Button disabled={isSubmitting} onClick={handleSubmit} className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md">
+            {isSubmitting ? (
+              <>
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                Submitting
+              </>
+            ) : (
+              "Submit"
+            )}
+          </Button>
         </DialogFooter>
       </DialogContent>
       <ThankYouModal
         open={thankYouOpen}
-        onClose={() => setThankYouOpen(false)}
+        onClose={() => {
+          setThankYouOpen(false);
+          router.push("/");
+        }}
       />
     </Dialog >
   )

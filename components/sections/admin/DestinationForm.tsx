@@ -12,13 +12,21 @@ import { ArrowLeft, Upload, Loader2, Calendar, Plus, Trash2 } from 'lucide-react
 
 interface LandingPageDestination {
   id?: string;
+
   from: string;
   destination: string;
-  duration: string;
-  price: string;
   date: string;
   stops: number;
   destinationImage: string | null;
+
+  returnFrom: string,
+  returnDestination: string,
+  returnDate: string
+  returnStops: number
+  returnDestinationImage: string | null;
+
+  price: string;
+  duration: string;
 }
 
 interface LandingPageTip {
@@ -66,13 +74,21 @@ const defaultDestination: Destination = {
   featured: false,
   available: true,
   landingPageDestinations: [{
+
     from: '',
     destination: '',
-    duration: '',
-    price: '',
     date: '',
     stops: 1,
     destinationImage: null,
+
+    returnFrom: '',
+    returnDestination: "",
+    returnDate: "",
+    returnStops: 1,
+    returnDestinationImage: "",
+
+    price: '',
+    duration: '',
   }],
   landingPageTips: [{
     title: '',
@@ -81,13 +97,21 @@ const defaultDestination: Destination = {
 };
 
 const defaultLandingPageDestination: LandingPageDestination = {
+
   from: '',
   destination: '',
-  duration: '',
-  price: '',
   date: '',
   stops: 1,
   destinationImage: null,
+
+  returnFrom: '',
+  returnDestination: "",
+  returnDate: "",
+  returnStops: 1,
+  returnDestinationImage: "",
+
+  price: '',
+  duration: '',
 };
 
 const defaultLandingPageTip: LandingPageTip = {
@@ -115,7 +139,11 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
   // Landing page destination images (array indexed)
   const [lpImageFiles, setLpImageFiles] = useState<{ [key: number]: File }>({});
 
+  const [lpReturnImageFiles, setLpReturnImageFiles] = useState<{ [key: number]: File }>({});
+
   const [lpImagePreviews, setLpImagePreviews] = useState<{ [key: number]: string }>({});
+
+  const [lpReturnImagePreviews, setLpReturnImagePreviews] = useState<{ [key: number]: string }>({});
 
   const [uploadingLpImages, setUploadingLpImages] = useState<{ [key: number]: boolean }>({});
 
@@ -162,10 +190,6 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
     const data = await res.json();
     return data.imageUrl || null;
   };
-
-
-
-
 
   // Landing Page Destination handlers
   const addLandingPageDestination = () => {
@@ -215,6 +239,20 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
     }
   };
 
+
+  const handleLpReturnImageChange = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      setLpReturnImageFiles((prev) => ({ ...prev, [index]: file }));
+
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setLpReturnImagePreviews((prev) => ({ ...prev, [index]: reader.result as string }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleLpImageUpload = async (index: number) => {
     const file = lpImageFiles[index];
     if (!file) return null;
@@ -233,6 +271,34 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
       const data = await response.json();
 
       handleLpDestinationChange(index, 'destinationImage', data.imageUrl);
+      return data.imageUrl;
+    } catch (err) {
+      console.error('Error uploading landing page image:', err);
+      setError('Failed to upload landing page image. Please try again.');
+      return null;
+    } finally {
+      setUploadingLpImages((prev) => ({ ...prev, [index]: false }));
+    }
+  };
+
+  const handleLpReturnImageUpload = async (index: number) => {
+    const file = lpReturnImageFiles[index];
+    if (!file) return null;
+
+    try {
+      setUploadingLpImages((prev) => ({ ...prev, [index]: true }));
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch('/api/admin/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) throw new Error('Failed to upload image');
+      const data = await response.json();
+
+      handleLpDestinationChange(index, 'returnDestinationImage', data.imageUrl);
       return data.imageUrl;
     } catch (err) {
       console.error('Error uploading landing page image:', err);
@@ -292,7 +358,6 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
     setIsSubmitting(true);
     setError(null);
 
-    console.log("imageFile==========>", imageFile);
     try {
       // Upload main image if exists
       let mainImageUrl = formData.destinationImage;
@@ -305,9 +370,18 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
 
       for (let i = 0; i < updatedLandingDestinations.length; i++) {
         if (lpImageFiles[i]) {
+
           const imageUrl = await handleLpImageUpload(i);
           updatedLandingDestinations[i].destinationImage = imageUrl;
+
         }
+        if (lpReturnImageFiles[i]) {
+
+          const imageUrl = await handleLpReturnImageUpload(i);
+          updatedLandingDestinations[i].returnDestinationImage = imageUrl;
+
+        }
+
       }
 
       const payload = {
@@ -604,29 +678,7 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
                         />
                       </div>
 
-                      <div className="grid grid-cols-2 gap-2">
-                        <div>
-                          <Label>Duration</Label>
-                          <Input
-                            value={lpDest.duration}
-                            onChange={(e) => handleLpDestinationChange(index, 'duration', e.target.value)}
-                            placeholder="e.g. 7 nights"
-                            required
-                          />
-                        </div>
 
-                        <div>
-                          <Label>Price (£)</Label>
-                          <Input
-                            type="number"
-                            value={lpDest.price}
-                            onChange={(e) => handleLpDestinationChange(index, 'price', e.target.value)}
-                            min="0"
-                            // step="0.01"
-                            required
-                          />
-                        </div>
-                      </div>
 
                       <div className="grid grid-cols-2 gap-2" >
                         <div className=' flex flex-col justify-end'>
@@ -656,6 +708,7 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
                         </div>
                       </div>
                     </div>
+
 
                     <div>
                       <Label>Destination Image</Label>
@@ -691,6 +744,118 @@ export default function DestinationForm({ initialData, isEditing = false }: Dest
                           />
                         </div>
                       </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+                    <div className="space-y-3">
+                      <div>
+                        <Label>From (Return)</Label>
+                        <Input
+                          value={lpDest.returnFrom}
+                          onChange={(e) => handleLpDestinationChange(index, 'returnFrom', e.target.value)}
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <Label>Destination (Return)</Label>
+                        <Input
+                          value={lpDest.returnDestination}
+                          onChange={(e) => handleLpDestinationChange(index, 'returnDestination', e.target.value)}
+                          required
+                        />
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-2" >
+                        <div className=' flex flex-col justify-end'>
+                          <Label className="flex items-center mb-1">
+                            <Calendar className="w-4 h-4 mr-2 text-blue-600" />
+                            Date (Return)
+                          </Label>
+                          <Input
+                            type="date"
+                            value={lpDest.returnDate}
+                            onChange={(e) => handleLpDestinationChange(index, 'returnDate', e.target.value)}
+                            required
+                          />
+                        </div>
+
+                        <div>
+                          <Label>Stops (Return)</Label>
+                          <select
+                            className="w-full h-10 bg-white border border-gray-300 rounded-md px-3 text-gray-900"
+                            value={lpDest.returnStops}
+                            onChange={(e) => handleLpDestinationChange(index, 'returnStops', e.target.value)}
+                          >
+                            {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+                              <option key={num} value={num}>{num}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label>Destination Image</Label>
+                      <div className="mt-2 space-y-3">
+                        {(lpReturnImagePreviews[index] || lpDest.returnDestinationImage) ? (
+                          <div className="relative w-full aspect-video rounded-md overflow-hidden">
+                            <img
+                              src={lpReturnImagePreviews[index] || lpDest.returnDestinationImage || ''}
+                              alt="Landing page destination preview"
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ) : (
+                          <div className="border-2 border-dashed border-gray-200 rounded-md p-6 text-center">
+                            <Upload className="w-6 h-6 mx-auto text-gray-400" />
+                            <p className="mt-2 text-xs text-gray-500">Upload image</p>
+                          </div>
+                        )}
+
+                        <div className="flex items-center gap-2">
+                          <Label
+                            htmlFor={`lp-return-image-${index}`}
+                            className="inline-flex items-center justify-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 cursor-pointer"
+                          >
+                            {lpReturnImagePreviews[index] || lpDest.returnDestinationImage ? 'Change' : 'Upload'}
+                          </Label>
+                          <Input
+                            id={`lp-return-image-${index}`}
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => handleLpReturnImageChange(index, e)}
+                            className="sr-only hidden"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr className=' !mt-5' />
+
+                  <div className="grid grid-cols-2 gap-2 !mt-5">
+
+                    <div>
+
+                      <Label>Duration</Label>
+                      <Input
+                        value={lpDest.duration}
+                        onChange={(e) => handleLpDestinationChange(index, 'duration', e.target.value)}
+                        placeholder="e.g. 7 nights"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <Label>Price (£)</Label>
+                      <Input
+                        type="number"
+                        value={lpDest.price}
+                        onChange={(e) => handleLpDestinationChange(index, 'price', e.target.value)}
+                        min="0"
+                        // step="0.01"
+                        required
+                      />
                     </div>
                   </div>
                 </Card>

@@ -3,9 +3,9 @@
 import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { 
-  LayoutDashboard, 
-  Package, 
+import {
+  LayoutDashboard,
+  Package,
   Mail,
   PlaneTakeoff,
   Calendar,
@@ -18,12 +18,13 @@ import {
 export default function AdminDashboard() {
 
   const { data: session } = useSession();
-  
+
   const router = useRouter();
-  
+
   const [isLoaded, setIsLoaded] = useState(false);
-  
+
   const [refreshing, setRefreshing] = useState(false);
+
 
   // Mock data
   const [stats, setStats] = useState({
@@ -35,31 +36,42 @@ export default function AdminDashboard() {
   });
 
   const [recentEnquiries, setRecentEnquiries] = useState([
-    {
-      id: '1',
-      customerName: 'John Smith',
-      email: 'john@example.com',
-      subject: 'Holiday Package',
-      status: 'NEW',
-      date: new Date('2023-08-15')
-    },
-    {
-      id: '2',
-      customerName: 'Emma Wilson',
-      email: 'emma@example.com',
-      subject: 'Flight Booking',
-      status: 'IN_PROGRESS',
-      date: new Date('2023-08-14')
-    },
-    {
-      id: '3',
-      customerName: 'Michael Brown',
-      email: 'michael@example.com',
-      subject: 'Travel Advice',
-      status: 'RESOLVED',
-      date: new Date('2023-08-12')
-    }
+    // {
+    //   id: '1',
+    //   customerName: 'John Smith',
+    //   email: 'john@example.com',
+    //   subject: 'Holiday Package',
+    //   status: 'NEW',
+    //   date: new Date('2023-08-15')
+    // },
+    // {
+    //   id: '2',
+    //   customerName: 'Emma Wilson',
+    //   email: 'emma@example.com',
+    //   subject: 'Flight Booking',
+    //   status: 'IN_PROGRESS',
+    //   date: new Date('2023-08-14')
+    // },
+    // {
+    //   id: '3',
+    //   customerName: 'Michael Brown',
+    //   email: 'michael@example.com',
+    //   subject: 'Travel Advice',
+    //   status: 'RESOLVED',
+    //   date: new Date('2023-08-12')
+    // }
   ]);
+
+  useEffect(() => {
+    const fetchRecentEnquiries = async () => {
+      const response = await fetch(`/api/admin/enquiries/recent`);
+
+      let data = await response.json();
+
+      setRecentEnquiries(data);
+    }
+    fetchRecentEnquiries();
+  }, [])
 
   useEffect(() => {
     setIsLoaded(true);
@@ -77,7 +89,7 @@ export default function AdminDashboard() {
     router.push('/admin/logout');
   };
 
-  const formatDate = (date:any) => {
+  const formatDate = (date: any) => {
     return new Intl.DateTimeFormat('en-GB', {
       day: 'numeric',
       month: 'short',
@@ -85,9 +97,9 @@ export default function AdminDashboard() {
     }).format(date);
   };
 
-  const getStatusBadge = (status:string) => {
+  const getStatusBadge = (status: string) => {
     const baseClasses = "px-2 py-1 rounded-full text-xs font-medium";
-    
+
     switch (status) {
       case 'NEW':
         return <span className={`${baseClasses} bg-yellow-100 text-yellow-800`}>New</span>;
@@ -109,14 +121,14 @@ export default function AdminDashboard() {
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Admin Dashboard</h1>
         <div className="flex space-x-2">
-          <button 
+          <button
             onClick={refreshData}
             className="flex items-center px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50"
           >
             <RefreshCw className={`mr-2 h-4 w-4 ${refreshing ? 'animate-spin' : ''}`} />
             {refreshing ? 'Refreshing...' : 'Refresh'}
           </button>
-          <button 
+          <button
             onClick={() => router.push('/admin/holidays/new')}
             className="flex items-center px-3 py-2 bg-blue-600 rounded-md shadow-sm text-sm font-medium text-white hover:bg-blue-700"
           >
@@ -125,7 +137,7 @@ export default function AdminDashboard() {
           </button>
         </div>
       </div>
-      
+
       <div className="bg-white p-6 rounded-lg shadow-md mb-6">
         <div className="flex justify-between items-start">
           <div>
@@ -142,7 +154,7 @@ export default function AdminDashboard() {
           </button>
         </div>
       </div>
-      
+
       <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-lg font-semibold mb-2">Total Enquiries</h3>
@@ -152,7 +164,7 @@ export default function AdminDashboard() {
             <span className="ml-2 text-sm text-gray-500">({stats.newEnquiries} new)</span>
           </div>
         </div>
-        
+
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-lg font-semibold mb-2">Active Holidays</h3>
           <div className="flex items-center">
@@ -160,7 +172,7 @@ export default function AdminDashboard() {
             <p className="text-3xl font-bold text-green-600">{stats.totalHolidays}</p>
           </div>
         </div>
-        
+
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-lg font-semibold mb-2">Trip Plans</h3>
           <div className="flex items-center">
@@ -169,7 +181,7 @@ export default function AdminDashboard() {
             <span className="ml-2 text-sm text-yellow-600">({stats.pendingTripPlans} pending)</span>
           </div>
         </div>
-        
+
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h3 className="text-lg font-semibold mb-2">Users</h3>
           <div className="flex items-center">
@@ -182,23 +194,23 @@ export default function AdminDashboard() {
       {/* Quick Actions */}
       <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <button 
+        <button
           onClick={() => router.push('/admin/enquiries')}
           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md hover:bg-gray-50"
         >
           <Mail className="h-8 w-8 mb-2 text-blue-500" />
           <span className="font-medium">View Enquiries</span>
         </button>
-        
-        <button 
+
+        <button
           onClick={() => router.push('/admin/holidays')}
           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md hover:bg-gray-50"
         >
           <Package className="h-8 w-8 mb-2 text-green-500" />
           <span className="font-medium">Manage Holidays</span>
         </button>
-        
-        <button 
+
+        <button
           onClick={() => router.push('/admin/trip-plans')}
           className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md hover:bg-gray-50"
         >
@@ -206,7 +218,7 @@ export default function AdminDashboard() {
           <span className="font-medium">Manage Trip Plans</span>
         </button>
       </div>
-      
+
       {/* Recent Enquiries */}
       <h2 className="text-xl font-semibold mb-4">Recent Enquiries</h2>
       <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
@@ -222,14 +234,14 @@ export default function AdminDashboard() {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {recentEnquiries.map((enquiry) => (
+              {recentEnquiries.map((enquiry: any) => (
                 <tr key={enquiry.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="font-medium text-gray-900">{enquiry.customerName}</div>
+                    <div className="font-medium text-gray-900">{`${enquiry.firstName} ${enquiry.lastName}`}</div>
                     <div className="text-sm text-gray-500">{enquiry.email}</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {enquiry.subject}
+                    {enquiry.subject ?? "---"}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {formatDate(enquiry.date)}
@@ -238,7 +250,7 @@ export default function AdminDashboard() {
                     {getStatusBadge(enquiry.status)}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                    <button 
+                    <button
                       onClick={() => router.push(`/admin/enquiries/${enquiry.id}`)}
                       className="text-blue-600 hover:text-blue-900"
                     >
@@ -251,7 +263,7 @@ export default function AdminDashboard() {
           </table>
         </div>
         <div className="bg-gray-50 px-4 py-3 border-t border-gray-200 text-right">
-          <button 
+          <button
             onClick={() => router.push('/admin/enquiries')}
             className="text-sm font-medium text-blue-600 hover:text-blue-900"
           >
