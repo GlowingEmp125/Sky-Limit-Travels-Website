@@ -110,7 +110,10 @@ export async function POST(request: Request) {
     // Get destination data from request body
     const data = await request.json();
 
-    const { firstName, lastName, email, phone } = data;
+    const { firstName, lastName, email, phone, from, destination, returnFrom, returnDestination } = data;
+
+    console.log({ firstName, lastName, email, phone, from, destination, returnFrom, returnDestination });
+
 
     // Use executeAsAdmin for secure database access
     const enquiry = await executeAsAdmin(async (prisma) => {
@@ -122,6 +125,10 @@ export async function POST(request: Request) {
           phone: phone || "",
           message: data.message || "",
           status: "NEW",
+          from: from || "",
+          destination: destination || "",
+          returnFrom: returnFrom || "",
+          returnDestination: returnDestination || ""
         }
       });
     });

@@ -15,19 +15,23 @@ generator client {
 
 // Model for storing contact form enquiries
 model Enquiry {
-  id             String        @id @default(uuid())
-  firstName      String?
-  lastName       String?
-  email          String?
-  phone          String?
-  message        String?
-  type           String?        @default("GENERAL")
-  flightDetails  String?
-  holidayDetails String?
-  packageDetails String?
-  status         EnquiryStatus @default(NEW)
-  createdAt      DateTime      @default(now())
-  updatedAt      DateTime     @updatedAt
+  id                String        @id @default(uuid())
+  firstName         String?
+  lastName          String?
+  email             String?
+  phone             String?
+  message           String?
+  from              String?
+  destination       String?
+  returnFrom        String?
+  returnDestination String?
+  type              String?       @default("GENERAL")
+  flightDetails     String?
+  holidayDetails    String?
+  packageDetails    String?
+  status            EnquiryStatus @default(NEW)
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
 }
 
 // Status of enquiries
@@ -102,10 +106,10 @@ model LandingPageDestination {
   stops            Int      @default(1)
   destinationImage String?
 
-  returnFrom        String
-  returnDestination String
-  returnDate        DateTime
-  returnStops   Int    @default(1)
+  returnFrom             String
+  returnDestination      String
+  returnDate             DateTime
+  returnStops            Int      @default(1)
   returnDestinationImage String?
 
   duration String

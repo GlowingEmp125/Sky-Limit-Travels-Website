@@ -3,14 +3,17 @@
 import { Search, Plane, Users, Calendar, ArrowRight, ArrowRightLeft, Info, FolderPen, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import SimpleAirportSelect from '@/components/SimpleAirportSelect';
 import EnhancedAirportSelect from '@/components/EnhancedAirportSelect';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-export default function SearchHero() {
+interface Props {
+  destination: any
+}
+const SearchHero: FC<Props> = ({ destination: destinationData }) => {
 
   const router = useRouter();
 
@@ -41,6 +44,15 @@ export default function SearchHero() {
   const [tripClass, setTripClass] = useState<'Y' | 'C'>('Y');
 
   const [mounted, setMounted] = useState(false);
+
+
+  useEffect(() => {
+    if (destinationData) {
+      setDepartureAirport(destinationData.from);
+      setDestination(destinationData.destination);
+    }
+
+  }, [destinationData]);
 
   // Calculate total passengers
   const totalPassengers = parseInt(adults) + parseInt(children) + parseInt(infants);
@@ -100,7 +112,6 @@ export default function SearchHero() {
       return;
     }
 
-    console.log(`Searching for flights: ${departureAirport} → ${destination}`);
 
     // Use dates directly without additional formatting
     const searchParams = new URLSearchParams({
@@ -453,3 +464,5 @@ export default function SearchHero() {
     </div>
   );
 }
+
+export default SearchHero;

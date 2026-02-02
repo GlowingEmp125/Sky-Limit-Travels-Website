@@ -1,53 +1,55 @@
 "use client";
 
-import { Search, Plane, Users, Calendar, ArrowRight, ArrowRightLeft, Info } from 'lucide-react';
+import EnhancedAirportSelect from '@/components/EnhancedAirportSelect';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import SimpleAirportSelect from '@/components/SimpleAirportSelect';
-import EnhancedAirportSelect from '@/components/EnhancedAirportSelect';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ArrowRight, ArrowRightLeft, Calendar, Info, Plane, Search, Users } from 'lucide-react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { FC, useEffect, useState } from 'react';
 
-export default function Hero() {
+interface Props {
+  destinations: object[]
+}
+const Hero: FC<Props> = ({ destinations }) => {
 
   const router = useRouter();
-  
+
   const [destination, setDestination] = useState('');
-  
+
   const [departureAirport, setDepartureAirport] = useState('LHR');
-  
+
   const [departureDate, setDepartureDate] = useState('');
-  
+
   const [returnDate, setReturnDate] = useState('');
-  
+
   const [adults, setAdults] = useState('1');
-  
+
   const [children, setChildren] = useState('0');
-  
+
   const [infants, setInfants] = useState('0');
-  
+
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
-  
+
   const [tripType, setTripType] = useState<'return' | 'one-way'>('return');
-  
+
   const [tripClass, setTripClass] = useState<'Y' | 'C'>('Y');
-  
+
   const [mounted, setMounted] = useState(false);
-  
+
   // Calculate total passengers
   const totalPassengers = parseInt(adults) + parseInt(children) + parseInt(infants);
 
   // Set default dates on component mount
   useEffect(() => {
     setMounted(true);
-    
+
     // Set default departure date to tomorrow
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     setDepartureDate(tomorrow.toISOString().split('T')[0]);
-    
+
     // Set default return date to 7 days after departure
     const nextWeek = new Date();
     nextWeek.setDate(nextWeek.getDate() + 8);
@@ -64,24 +66,24 @@ export default function Hero() {
 
   const validateForm = () => {
     const errors: Record<string, string> = {};
-    
+
     if (!destination) {
       errors.destination = 'Please select a destination';
     }
-    
+
     if (!departureAirport) {
       errors.departureAirport = 'Please select a departure airport';
     }
-    
+
     if (!departureDate) {
       errors.departureDate = 'Please select a departure date';
     }
-    
+
     // Check if return date is before departure date
     if (tripType === 'return' && returnDate && new Date(returnDate) < new Date(departureDate)) {
       errors.returnDate = 'Return date must be after departure date';
     }
-    
+
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -91,9 +93,12 @@ export default function Hero() {
       return;
     }
 
-    console.log(`Searching for flights: ${departureAirport} → ${destination}`);
-
     // Use dates directly without additional formatting
+
+    const destinationId: any = destinations.find((destination: any) =>
+      destination?.from?.includes(departureAirport) ||
+      destination?.destination?.includes(destination))
+
     const searchParams = new URLSearchParams({
       type: 'flight',
       departureAirport,
@@ -103,16 +108,17 @@ export default function Hero() {
       adults,
       children,
       infants,
-      tripClass
+      tripClass,
+      id: destinationId?.id
     });
-    
+
     router.push(`/search?${searchParams.toString()}`);
   };
 
   // Handle departure airport selection
   const handleDepartureAirportChange = (value: string) => {
     setDepartureAirport(value);
-    
+
     if (formErrors.departureAirport) {
       setFormErrors({ ...formErrors, departureAirport: '' });
     }
@@ -121,7 +127,7 @@ export default function Hero() {
   // Handle destination selection
   const handleDestinationChange = (value: string) => {
     setDestination(value);
-    
+
     if (formErrors.destination) {
       setFormErrors({ ...formErrors, destination: '' });
     }
@@ -150,7 +156,7 @@ export default function Hero() {
             Search and compare flights to hundreds of destinations worldwide
           </p>
         </div>
-        
+
         {/* Search Form */}
         <div className="w-full max-w-3xl mx-auto">
           <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-white/20">
@@ -173,21 +179,21 @@ export default function Hero() {
               <>
                 {/* Trip Type Selector */}
                 <div className="p-4 border-b border-gray-200">
-                  <Tabs 
-                    defaultValue="return" 
-                    onValueChange={(value) => setTripType(value as 'return' | 'one-way')} 
+                  <Tabs
+                    defaultValue="return"
+                    onValueChange={(value) => setTripType(value as 'return' | 'one-way')}
                     className="w-full"
                   >
                     <TabsList className="grid w-full grid-cols-2 p-1 bg-gray-100">
-                      <TabsTrigger 
-                        value="return" 
+                      <TabsTrigger
+                        value="return"
                         className="rounded-md text-sm md:text-base py-2 transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white"
                       >
                         <ArrowRightLeft className="mr-2 h-4 w-4" />
                         Return
                       </TabsTrigger>
-                      <TabsTrigger 
-                        value="one-way" 
+                      <TabsTrigger
+                        value="one-way"
                         className="rounded-md text-sm md:text-base py-2 transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white"
                       >
                         <ArrowRight className="mr-2 h-4 w-4" />
@@ -204,7 +210,7 @@ export default function Hero() {
                     {/* From - Departure Airport */}
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-gray-700 flex items-center">
-                        <Plane className="w-4 h-4 mr-2 text-blue-600 -rotate-45" /> 
+                        <Plane className="w-4 h-4 mr-2 text-blue-600 -rotate-45" />
                         Flying from
                       </label>
                       <EnhancedAirportSelect
@@ -215,11 +221,11 @@ export default function Hero() {
                         className="w-full h-12"
                       />
                     </div>
-                    
+
                     {/* To - Destination */}
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-gray-700 flex items-center">
-                        <Plane className="w-4 h-4 mr-2 text-blue-600" /> 
+                        <Plane className="w-4 h-4 mr-2 text-blue-600" />
                         Flying to
                       </label>
                       <EnhancedAirportSelect
@@ -237,14 +243,13 @@ export default function Hero() {
                     {/* Departure Date */}
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-gray-700 flex items-center">
-                        <Calendar className="w-4 h-4 mr-2 text-blue-600" /> 
+                        <Calendar className="w-4 h-4 mr-2 text-blue-600" />
                         Departure Date
                       </label>
                       <Input
                         type="date"
-                        className={`w-full h-12 bg-white border-gray-300 text-gray-900 ${
-                          formErrors.departureDate ? 'border-red-500 focus:ring-red-200' : ''
-                        }`}
+                        className={`w-full h-12 bg-white border-gray-300 text-gray-900 ${formErrors.departureDate ? 'border-red-500 focus:ring-red-200' : ''
+                          }`}
                         value={departureDate}
                         onChange={(e) => setDepartureDate(e.target.value)}
                         min={getTomorrowDate()}
@@ -261,14 +266,13 @@ export default function Hero() {
                     {tripType === 'return' && (
                       <div className="space-y-2">
                         <label className="text-sm font-medium text-gray-700 flex items-center">
-                          <Calendar className="w-4 h-4 mr-2 text-blue-600" /> 
+                          <Calendar className="w-4 h-4 mr-2 text-blue-600" />
                           Return Date
                         </label>
                         <Input
                           type="date"
-                          className={`w-full h-12 bg-white border-gray-300 text-gray-900 ${
-                            formErrors.returnDate ? 'border-red-500 focus:ring-red-200' : ''
-                          }`}
+                          className={`w-full h-12 bg-white border-gray-300 text-gray-900 ${formErrors.returnDate ? 'border-red-500 focus:ring-red-200' : ''
+                            }`}
                           value={returnDate}
                           onChange={(e) => setReturnDate(e.target.value)}
                           min={departureDate || getTomorrowDate()}
@@ -293,7 +297,7 @@ export default function Hero() {
                         Total: {totalPassengers} {totalPassengers === 1 ? 'passenger' : 'passengers'}
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-3 gap-4">
                       {/* Adults */}
                       <div className="space-y-2">
@@ -348,7 +352,7 @@ export default function Hero() {
                   {/* Cabin Class */}
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-gray-700 flex items-center">
-                      <Info className="w-4 h-4 mr-2 text-blue-600" /> 
+                      <Info className="w-4 h-4 mr-2 text-blue-600" />
                       Cabin Class
                     </label>
                     <select
@@ -363,7 +367,7 @@ export default function Hero() {
 
                   {/* Search Button */}
                   <div className="pt-2">
-                    <Button 
+                    <Button
                       onClick={handleSearch}
                       className="w-full h-14 bg-blue-600 hover:bg-blue-700 text-white font-medium text-lg transition-all duration-200 hover:scale-[1.02]"
                     >
@@ -387,3 +391,5 @@ export default function Hero() {
     </div>
   );
 }
+
+export default Hero;

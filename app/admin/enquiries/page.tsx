@@ -305,7 +305,7 @@ export default function EnquiriesPage() {
                       </td>
                     </tr>
                   ) : (
-                    enquiries.map((enquiry) => {
+                    enquiries.map((enquiry: any) => {
                       const flightRoute = getFlightRouteDisplay(enquiry);
 
                       return (
@@ -326,7 +326,7 @@ export default function EnquiriesPage() {
                               </span>
                             </div>
                           </td>
-                          <td className="py-3 px-4">
+                          {/* <td className="py-3 px-4">
                             {flightRoute ? (
                               <div className="text-sm">
                                 <div className="font-medium text-gray-900">{flightRoute}</div>
@@ -337,7 +337,9 @@ export default function EnquiriesPage() {
                                 {enquiry.message.substring(0, 50)}...
                               </div>
                             )}
-                          </td>
+                          </td> */}
+                          <div className="font-medium text-gray-900 pt-3 px-4">{`${enquiry.from} -> ${enquiry.destination}`}</div>
+                          {enquiry.returnFrom && <div className="text-medium text-gray-900  px-4">{`${enquiry.returnFrom} -> ${enquiry.returnDestination}`}</div>}
                           <td className="py-3 px-4 text-sm text-gray-500">
                             {formatDate(enquiry.createdAt)}
                           </td>
@@ -386,8 +388,8 @@ export default function EnquiriesPage() {
                     onClick={() => handlePageChange(pagination.page - 1)}
                     disabled={pagination.page === 1}
                     className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${pagination.page === 1
-                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-white text-gray-700 hover:bg-gray-50'
                       }`}
                   >
                     Previous
@@ -396,8 +398,8 @@ export default function EnquiriesPage() {
                     onClick={() => handlePageChange(pagination.page + 1)}
                     disabled={pagination.page === pagination.totalPages}
                     className={`relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md ${pagination.page === pagination.totalPages
-                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-white text-gray-700 hover:bg-gray-50'
                       }`}
                   >
                     Next
@@ -419,8 +421,8 @@ export default function EnquiriesPage() {
                         onClick={() => handlePageChange(pagination.page - 1)}
                         disabled={pagination.page === 1}
                         className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium ${pagination.page === 1
-                            ? 'text-gray-300 cursor-not-allowed'
-                            : 'text-gray-500 hover:bg-gray-50'
+                          ? 'text-gray-300 cursor-not-allowed'
+                          : 'text-gray-500 hover:bg-gray-50'
                           }`}
                       >
                         <span className="sr-only">Previous</span>
@@ -431,8 +433,8 @@ export default function EnquiriesPage() {
                           key={page}
                           onClick={() => handlePageChange(page)}
                           className={`relative inline-flex items-center px-4 py-2 border text-sm font-medium ${page === pagination.page
-                              ? 'z-10 bg-blue-50 border-blue-500 text-blue-600'
-                              : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50'
+                            ? 'z-10 bg-blue-50 border-blue-500 text-blue-600'
+                            : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50'
                             }`}
                         >
                           {page}
@@ -442,8 +444,8 @@ export default function EnquiriesPage() {
                         onClick={() => handlePageChange(pagination.page + 1)}
                         disabled={pagination.page === pagination.totalPages}
                         className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium ${pagination.page === pagination.totalPages
-                            ? 'text-gray-300 cursor-not-allowed'
-                            : 'text-gray-500 hover:bg-gray-50'
+                          ? 'text-gray-300 cursor-not-allowed'
+                          : 'text-gray-500 hover:bg-gray-50'
                           }`}
                       >
                         <span className="sr-only">Next</span>

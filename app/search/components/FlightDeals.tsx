@@ -18,7 +18,7 @@ const FlightDeals: FC<Props> = ({ landingPageDestinations }) => {
 
   const [openModal, setOpenModal] = useState(false);
 
-  const [currentDeal, setCurrentDeal] = useState<any>(null);
+  const [currentDeal, setCurrentDeal] = useState<any>();
 
   const handleOpen = (deal: any) => {
     setCurrentDeal(deal);
@@ -106,7 +106,8 @@ const FlightDeals: FC<Props> = ({ landingPageDestinations }) => {
                     <p className="text-gray-600 text-sm">{destination.duration} nights</p>
                     <p className="font-bold text-lg">only £{destination.price}pp</p>
                   </div>
-                  <Button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md" onClick={handleOpen}>
+                  <Button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-md"
+                   onClick={() => handleOpen(destination)}>
                     Get Deal...
                   </Button>
                 </div>
@@ -122,7 +123,7 @@ const FlightDeals: FC<Props> = ({ landingPageDestinations }) => {
           show more deals
         </Button>
       </div> */}
-      <QuickCustomerBasicInfoModal open={openModal} onClose={handleClose} />
+      <QuickCustomerBasicInfoModal open={openModal} onClose={handleClose} currentDeal={currentDeal} />
     </div>
   );
 }

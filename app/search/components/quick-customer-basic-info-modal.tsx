@@ -1,28 +1,26 @@
 "use client";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+  DialogTitle
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 import { Info, Loader2, Mail, Phone, User } from "lucide-react";
-import { ChangeEvent, FC, InputEvent, useState } from "react";
-import ThankYouModal from "./thankyou-modal";
 import { useRouter } from "next/navigation";
+import { ChangeEvent, FC, useState } from "react";
+import ThankYouModal from "./thankyou-modal";
 
 interface QuickCustomerBasicInfoModalProps {
   open: boolean;
   onClose: () => void;
+  currentDeal: any
 }
 
-const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ open, onClose }) => {
+const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ open, onClose, currentDeal }) => {
 
 
   const [data, setData] = useState({
@@ -61,7 +59,16 @@ const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ ope
       // Process form submission
       const { firstName, lastName, email, phone } = data;
 
-      const payload = { firstName, lastName, email, phone }
+      const payload = {
+        firstName,
+        lastName,
+        email,
+        phone,
+        from: currentDeal?.from,
+        destination: currentDeal?.destination,
+        returnFrom: currentDeal?.returnFrom,
+        returnDestination: currentDeal?.returnDestination
+      }
 
       setIsSubmitting(true);
       setFormErrors({});
@@ -77,8 +84,8 @@ const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ ope
 
       if (!response.ok) throw new Error('Failed to submit enquiry');
 
-      handleClose();
-      setThankYouOpen(true);
+      // handleClose();
+      // setThankYouOpen(true);
 
     } catch (err) {
 
@@ -152,6 +159,7 @@ const QuickCustomerBasicInfoModal: FC<QuickCustomerBasicInfoModalProps> = ({ ope
             </label>
             <Input
               type="email"
+              name="email"
               placeholder='Enter Email'
               className={`w-full h-12 bg-white border-gray-300 text-gray-900`}
               value={data.email}

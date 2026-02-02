@@ -35,32 +35,7 @@ export default function AdminDashboard() {
     pendingTripPlans: 1
   });
 
-  const [recentEnquiries, setRecentEnquiries] = useState([
-    // {
-    //   id: '1',
-    //   customerName: 'John Smith',
-    //   email: 'john@example.com',
-    //   subject: 'Holiday Package',
-    //   status: 'NEW',
-    //   date: new Date('2023-08-15')
-    // },
-    // {
-    //   id: '2',
-    //   customerName: 'Emma Wilson',
-    //   email: 'emma@example.com',
-    //   subject: 'Flight Booking',
-    //   status: 'IN_PROGRESS',
-    //   date: new Date('2023-08-14')
-    // },
-    // {
-    //   id: '3',
-    //   customerName: 'Michael Brown',
-    //   email: 'michael@example.com',
-    //   subject: 'Travel Advice',
-    //   status: 'RESOLVED',
-    //   date: new Date('2023-08-12')
-    // }
-  ]);
+  const [recentEnquiries, setRecentEnquiries] = useState([]);
 
   useEffect(() => {
     const fetchRecentEnquiries = async () => {
@@ -227,7 +202,7 @@ export default function AdminDashboard() {
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subject</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Route/Subject</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                 <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
@@ -240,8 +215,12 @@ export default function AdminDashboard() {
                     <div className="font-medium text-gray-900">{`${enquiry.firstName} ${enquiry.lastName}`}</div>
                     <div className="text-sm text-gray-500">{enquiry.email}</div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {enquiry.subject ?? "---"}
+                  </td> */}
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="font-medium text-gray-900">{`${enquiry.from} -> ${enquiry.destination}`}</div>
+                    {enquiry.returnFrom && <div className="text-medium text-gray-900">{`${enquiry.returnFrom} -> ${enquiry.returnDestination}`}</div>}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {formatDate(enquiry.date)}

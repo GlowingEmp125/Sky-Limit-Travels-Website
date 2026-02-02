@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Plane, TrendingUp, Clock, MapPin, Sparkles, ArrowRight, Tag, Users } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight, Clock, MapPin, Plane, Sparkles, TrendingUp, Users } from 'lucide-react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { FC } from 'react';
 
 interface PopularRoute {
   id: string;
@@ -145,46 +145,15 @@ const countryDestinations = [
     fromPrice: '125'
   }
 ];
-
-export default function PopularFlights() {
+interface Props {
+  activeCategory: string
+  isLoading: boolean,
+  destinations: object[],
+  setActiveCategory: any
+}
+const PopularFlights: FC<Props> = ({ isLoading, destinations, setActiveCategory, activeCategory }) => {
 
   const router = useRouter();
-
-  const [destinations, setDestinations] = useState([]);
-
-  const [isLoading, setIsLoading] = useState(false);
-
-  const [activeCategory, setActiveCategory] = useState('all');
-
-  useEffect(() => {
-    const fetchDestinations = async () => {
-      try {
-        setIsLoading(true);
-
-        const params = new URLSearchParams({
-          featured: 'true',
-          available: 'true',
-          slogan: activeCategory === "all" ? "" : activeCategory
-        });
-
-        const response = await fetch(`/api/admin/destination?${params.toString()}`);
-
-        if (!response.ok) {
-          throw new Error('Failed to fetch destinations');
-        }
-
-        const data = await response.json();
-
-        setDestinations(data);
-      } catch (err) {
-        console.error('Error fetching destinations:', err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchDestinations();
-  }, [activeCategory]);
 
 
   const handleRouteSelect = (route: any) => {
@@ -308,10 +277,11 @@ export default function PopularFlights() {
                 className="group relative overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer bg-white hover:-translate-y-1"
                 onClick={() => handleRouteSelect(route)}
               >
+
                 {/* Background Image */}
                 <div className="relative h-48 overflow-hidden">
                   <Image
-                    src={route.destinationImage || '/images/default-destination.jpg'}
+                    src={route.destinationImage ? route.destinationImage : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'}
                     alt={`${route.title
                       } destination`}
                     fill
@@ -355,7 +325,7 @@ export default function PopularFlights() {
                 <CardContent className="p-6">
                   {/* Description */}
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {route.description}
+                    {route.description?.length > 70 ? route.description.slice(0, 70) + "..." : route.description}
                   </p>
 
                   {/* Flight Details */}
@@ -371,7 +341,7 @@ export default function PopularFlights() {
                   </div>
 
                   {/* Price and Action */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between ">
                     <div>
                       <div className="text-3xl font-bold text-blue-600">
                         £{route.price}
@@ -506,4 +476,6 @@ export default function PopularFlights() {
       </section>
     </div>
   );
-} 
+}
+
+export default PopularFlights;
