@@ -14,7 +14,6 @@ export default function Home() {
 
   const [activeCategory, setActiveCategory] = useState('all');
 
-
   useEffect(() => {
     const fetchDestinations = async () => {
       try {
@@ -47,7 +46,7 @@ export default function Home() {
 
   return (
     <main>
-      <Hero destinations={destinations}/>
+      <Hero destinations={destinations} />
       <PopularFlights
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}

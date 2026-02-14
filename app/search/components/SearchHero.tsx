@@ -45,6 +45,35 @@ const SearchHero: FC<Props> = ({ destination: destinationData }) => {
 
   const [mounted, setMounted] = useState(false);
 
+  const [destinations, setDestinations] = useState([]);
+
+
+  useEffect(() => {
+    const fetchDestinations = async () => {
+      try {
+
+        const params = new URLSearchParams({
+          featured: 'true',
+          available: 'true',
+        });
+
+        const response = await fetch(`/api/admin/destination?${params.toString()}`);
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch destinations');
+        }
+
+        const data = await response.json();
+
+        setDestinations(data);
+      } catch (err) {
+        console.error('Error fetching destinations:', err);
+      }
+    };
+    fetchDestinations();
+  }, []);
+
+
 
   useEffect(() => {
     if (destinationData) {
@@ -112,6 +141,10 @@ const SearchHero: FC<Props> = ({ destination: destinationData }) => {
       return;
     }
 
+    const destinationId: any = destinations.find((destination: any) =>
+      destination?.from?.includes(departureAirport) ||
+      destination?.destination?.includes(destination))
+
 
     // Use dates directly without additional formatting
     const searchParams = new URLSearchParams({
@@ -123,7 +156,8 @@ const SearchHero: FC<Props> = ({ destination: destinationData }) => {
       adults,
       children,
       infants,
-      tripClass
+      tripClass,
+      id: destinationId?.id
     });
 
     router.push(`/search?${searchParams.toString()}`);
@@ -236,6 +270,7 @@ const SearchHero: FC<Props> = ({ destination: destinationData }) => {
                         onChange={handleDepartureAirportChange}
                         placeholder="Search departure city or airport..."
                         error={formErrors.departureAirport}
+                        destinations={destinations}
                         className="w-full h-12"
                       />
                     </div>
@@ -251,6 +286,7 @@ const SearchHero: FC<Props> = ({ destination: destinationData }) => {
                         onChange={handleDestinationChange}
                         placeholder="Search destination city or airport..."
                         error={formErrors.destination}
+                        destinations={destinations}
                         className="w-full h-12"
                       />
                     </div>

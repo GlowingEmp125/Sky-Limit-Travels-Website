@@ -104,7 +104,7 @@ const SearchResults: FC<Props> = ({ searchParams }) => {
             <>
               <SearchHero destination={destination} />
               <FlightDeals landingPageDestinations={destination?.landingPageDestinations} />
-              <LondonToDubaiGuide landingPageTips={destination?.landingPageTips} />
+              <LondonToDubaiGuide destination={destination} landingPageTips={destination?.landingPageTips} />
             </>
           }
         </>

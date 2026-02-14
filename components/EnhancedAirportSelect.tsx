@@ -13,6 +13,7 @@ interface EnhancedAirportSelectProps {
   error?: string;
   label?: string;
   disabled?: boolean;
+  destinations: any;
 }
 
 interface DestinationResult {
@@ -33,25 +34,26 @@ export default function EnhancedAirportSelect({
   className = "",
   error = "",
   label,
+  destinations,
   disabled = false
 }: EnhancedAirportSelectProps) {
 
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const [searchQuery, setSearchQuery] = useState('');
-  
+
   const [displayValue, setDisplayValue] = useState('');
-  
+
   const [results, setResults] = useState<DestinationResult[]>([]);
-  
+
   const [loading, setLoading] = useState(false);
-  
+
   const [focused, setFocused] = useState(false);
-  
+
   const dropdownRef = useRef<HTMLDivElement>(null);
-  
+
   const inputRef = useRef<HTMLInputElement>(null);
-  
+
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Update display value when value prop changes
@@ -61,7 +63,7 @@ export default function EnhancedAirportSelect({
       if (value.endsWith('C')) {
         // Country code - display as "Country (All airports)"
         const countryCode = value.substring(0, value.length - 1);
-        const countryAirports = airports.filter(a => 
+        const countryAirports = airports.filter(a =>
           a.country.toLowerCase().includes(countryCode.toLowerCase())
         );
         if (countryAirports.length > 0) {
@@ -72,7 +74,7 @@ export default function EnhancedAirportSelect({
       } else if (value.endsWith('A')) {
         // City code - display as "City (All airports)"
         const cityCode = value.substring(0, value.length - 1);
-        const cityAirports = airports.filter(a => 
+        const cityAirports = airports.filter(a =>
           a.city.toLowerCase().includes(cityCode.toLowerCase())
         );
         if (cityAirports.length > 0) {
@@ -108,16 +110,16 @@ export default function EnhancedAirportSelect({
       const response = await fetch(`/api/destination-search?keyword=${encodeURIComponent(query)}`);
       if (response.ok) {
         const data = await response.json();
-        
+
         // Add popular UK airports to the top if no specific search
         let enhancedResults = [...data];
-        
+
         if (query.length === 2) {
           const popularUKAirports = airports
-            .filter(a => 
-              a.country === 'United Kingdom' && 
-              ['LHR', 'LGW', 'STN', 'LTN', 'MAN', 'BHX', 'EDI', 'GLA'].includes(a.iataCode)
-            )
+            // .filter(a =>
+            //   a.country === 'United Kingdom' &&
+            //   ['LHR', 'LGW', 'STN', 'LTN', 'MAN', 'BHX', 'EDI', 'GLA'].includes(a.iataCode)
+            // )
             .map(airport => ({
               type: 'location',
               subType: 'AIRPORT',
@@ -127,10 +129,10 @@ export default function EnhancedAirportSelect({
               countryName: airport.country,
               displayName: `${airport.city}, ${airport.country} - ${airport.name} (${airport.iataCode})`
             }));
-          
+
           enhancedResults = [...popularUKAirports, ...data];
         }
-        
+
         setResults(enhancedResults);
       } else {
         // Fallback to local search
@@ -147,18 +149,36 @@ export default function EnhancedAirportSelect({
 
   // Local search fallback
   const performLocalSearch = (query: string) => {
-    const localResults = airports
-      .filter(airport =>
+    // const localResults = airports
+    //   .filter(airport =>
+    //     airport.name.toLowerCase().includes(query.toLowerCase()) ||
+    //     airport.city.toLowerCase().includes(query.toLowerCase()) ||
+    //     airport.iataCode.toLowerCase().includes(query.toLowerCase()) ||
+    //     airport.country.toLowerCase().includes(query.toLowerCase())
+    //   )
+    //   .slice(0, 15)
+    //   .map(airport => ({
+    //     type: 'location',
+    //     subType: 'AIRPORT',
+    //     name: airport.name,
+    //     iataCode: airport.iataCode,
+    //     cityName: airport.city,
+    //     countryName: airport.country,
+    //     displayName: `${airport.city}, ${airport.country} - ${airport.name} (${airport.iataCode})`
+    //   }));
+
+    const localResults = destinations
+      .filter((airport: any) =>
         airport.name.toLowerCase().includes(query.toLowerCase()) ||
         airport.city.toLowerCase().includes(query.toLowerCase()) ||
         airport.iataCode.toLowerCase().includes(query.toLowerCase()) ||
         airport.country.toLowerCase().includes(query.toLowerCase())
       )
       .slice(0, 15)
-      .map(airport => ({
+      .map((airport: any) => ({
         type: 'location',
         subType: 'AIRPORT',
-        name: airport.name,
+        name: airport.from,
         iataCode: airport.iataCode,
         cityName: airport.city,
         countryName: airport.country,
@@ -167,7 +187,7 @@ export default function EnhancedAirportSelect({
 
     // Group by country and add "All airports" options
     const countryGroups: Record<string, DestinationResult[]> = {};
-    localResults.forEach(result => {
+    localResults.forEach((result: any) => {
       if (result.countryName) {
         if (!countryGroups[result.countryName]) {
           countryGroups[result.countryName] = [];
@@ -219,8 +239,10 @@ export default function EnhancedAirportSelect({
   };
 
   // Handle selection
-  const handleSelect = (result: DestinationResult) => {
-    onChange(result.iataCode);
+  const handleSelect = (result: any) => {
+
+    // onChange(result.iataCode);
+    onChange(result.name);
     setIsOpen(false);
     setSearchQuery('');
     setResults([]);
@@ -231,23 +253,23 @@ export default function EnhancedAirportSelect({
   const handleInputFocus = () => {
     setFocused(true);
     setIsOpen(true);
-    
+
     // If no search query, show popular airports
     if (!searchQuery && results.length === 0) {
-      const popularAirports = airports
-        .filter(a => 
-          ['LHR', 'LGW', 'STN', 'LTN', 'MAN', 'BHX', 'EDI', 'GLA', 'CDG', 'AMS', 'FCO', 'BCN'].includes(a.iataCode)
-        )
-        .map(airport => ({
+      const popularAirports = destinations
+        // .filter((a: any) =>
+        //   ['LHR', 'LGW', 'STN', 'LTN', 'MAN', 'BHX', 'EDI', 'GLA', 'CDG', 'AMS', 'FCO', 'BCN'].includes(a.iataCode)
+        // )
+        ?.map((airport: any) => ({
           type: 'location',
           subType: 'AIRPORT',
-          name: airport.name,
+          name: airport.from,
           iataCode: airport.iataCode,
           cityName: airport.city,
           countryName: airport.country,
           displayName: `${airport.city}, ${airport.country} - ${airport.name} (${airport.iataCode})`
         }));
-      
+
       setResults(popularAirports);
     }
   };
@@ -297,7 +319,7 @@ export default function EnhancedAirportSelect({
     if (isAllAirports) {
       return <Globe className="h-4 w-4 text-blue-600" />;
     }
-    
+
     switch (subType) {
       case 'AIRPORT':
         return <Plane className="h-4 w-4 text-blue-600" />;
@@ -312,10 +334,10 @@ export default function EnhancedAirportSelect({
 
   // Group results for better display
   const groupedResults = results.reduce((acc, result) => {
-    const key = result.isAllAirports ? 'All Airports' : 
-                result.subType === 'AIRPORT' ? 'Airports' :
-                result.subType === 'CITY' ? 'Cities' : 'Other';
-    
+    const key = result.isAllAirports ? 'All Airports' :
+      result.subType === 'AIRPORT' ? 'Airports' :
+        result.subType === 'CITY' ? 'Cities' : 'Other';
+
     if (!acc[key]) {
       acc[key] = [];
     }
@@ -343,20 +365,18 @@ export default function EnhancedAirportSelect({
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
           disabled={disabled}
-          className={`pr-10 transition-all duration-200 ${
-            focused ? 'ring-2 ring-blue-200 border-blue-500' : ''
-          } ${error ? 'border-red-500 focus:ring-red-200' : ''} ${
-            disabled ? 'bg-gray-50 cursor-not-allowed' : ''
-          }`}
+          className={`pr-10 transition-all duration-200 ${focused ? 'ring-2 ring-blue-200 border-blue-500' : ''
+            } ${error ? 'border-red-500 focus:ring-red-200' : ''} ${disabled ? 'bg-gray-50 cursor-not-allowed' : ''
+            }`}
         />
-        
+
         {/* Loading indicator */}
         {loading && (
           <div className="absolute right-8 top-1/2 transform -translate-y-1/2">
             <Loader2 className="h-4 w-4 animate-spin text-blue-600" />
           </div>
         )}
-        
+
         {/* Clear button */}
         {value && !loading && !disabled && (
           <button
@@ -367,15 +387,14 @@ export default function EnhancedAirportSelect({
             <X className="h-4 w-4" />
           </button>
         )}
-        
+
         {/* Dropdown toggle */}
         <button
           type="button"
           onClick={() => !disabled && setIsOpen(!isOpen)}
           disabled={disabled}
-          className={`absolute right-2 top-1/2 transform -translate-y-1/2 transition-all duration-200 ${
-            disabled ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-gray-600'
-          }`}
+          className={`absolute right-2 top-1/2 transform -translate-y-1/2 transition-all duration-200 ${disabled ? 'text-gray-300 cursor-not-allowed' : 'text-gray-400 hover:text-gray-600'
+            }`}
         >
           <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
         </button>
@@ -423,7 +442,7 @@ export default function EnhancedAirportSelect({
                         {groupName} ({groupResults.length})
                       </div>
                     )}
-                    
+
                     {/* Group items */}
                     {groupResults.map((result, index) => (
                       <button

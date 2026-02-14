@@ -3,8 +3,9 @@
 import EnhancedAirportSelect from '@/components/EnhancedAirportSelect';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowRight, ArrowRightLeft, Calendar, Info, Plane, Search, Users } from 'lucide-react';
+import { ArrowRight, ArrowRightLeft, Calendar, ChevronDownIcon, Info, Plane, Search, Users } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FC, useEffect, useState } from 'react';
@@ -18,7 +19,7 @@ const Hero: FC<Props> = ({ destinations }) => {
 
   const [destination, setDestination] = useState('');
 
-  const [departureAirport, setDepartureAirport] = useState('LHR');
+  const [departureAirport, setDepartureAirport] = useState('');
 
   const [departureDate, setDepartureDate] = useState('');
 
@@ -42,6 +43,14 @@ const Hero: FC<Props> = ({ destinations }) => {
   const totalPassengers = parseInt(adults) + parseInt(children) + parseInt(infants);
 
   // Set default dates on component mount
+
+  useEffect(() => {
+
+    if (destinations) {
+      setDepartureAirport((destinations?.[0] as any)?.from || "")
+    }
+
+  }, [destinations]);
   useEffect(() => {
     setMounted(true);
 
@@ -218,6 +227,7 @@ const Hero: FC<Props> = ({ destinations }) => {
                         onChange={handleDepartureAirportChange}
                         placeholder="Search departure city or airport..."
                         error={formErrors.departureAirport}
+                        destinations={destinations}
                         className="w-full h-12"
                       />
                     </div>
@@ -233,6 +243,7 @@ const Hero: FC<Props> = ({ destinations }) => {
                         onChange={handleDestinationChange}
                         placeholder="Search destination city or airport..."
                         error={formErrors.destination}
+                        destinations={destinations}
                         className="w-full h-12"
                       />
                     </div>
@@ -254,6 +265,7 @@ const Hero: FC<Props> = ({ destinations }) => {
                         onChange={(e) => setDepartureDate(e.target.value)}
                         min={getTomorrowDate()}
                       />
+
                       {formErrors.departureDate && (
                         <div className="text-xs text-red-500 flex items-center mt-1">
                           <Info className="w-3 h-3 mr-1" />
