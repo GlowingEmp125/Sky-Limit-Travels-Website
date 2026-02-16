@@ -1,13 +1,15 @@
-const { PrismaClient } = require('@prisma/client');
+// const { PrismaClient } = require('@prisma/client');
 
 // This script will force the Prisma client to be regenerated
 // Run it with: npx ts-node prisma/sync.ts
+import { PrismaPg } from "@prisma/adapter-pg";
+const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
 
 async function main() {
   console.log('Syncing Prisma schema...');
   
   // Create a prisma client to test the connection
-  const prisma = new PrismaClient();
+  const prisma = new PrismaClient({ adapter });
   
   try {
     // Test the connection

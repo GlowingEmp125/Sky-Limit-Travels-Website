@@ -11,7 +11,7 @@
 // // Create a client with options
 // const createPrismaClient = () => {
 //   console.log('Creating Prisma client...');
-  
+
 //   // Create the client with logging options
 //   const client = new PrismaClient({
 //     datasources: {
@@ -23,7 +23,7 @@
 //     },
 //     log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
 //   });
-  
+
 //   // Add middleware for logging
 //   client.$use(async (params, next) => {
 //     const before = Date.now();
@@ -41,7 +41,7 @@
 //       throw error;
 //     }
 //   });
-  
+
 //   console.log('Prisma client created successfully');
 //   return client;
 // };
@@ -69,20 +69,26 @@
 // export default prisma; 
 
 import { PrismaClient } from "@prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
 
-const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
+// const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
 
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
-    datasources: {
-      db: {
-        url: process.env.POSTGRES_PRISMA_URL, // Prisma 6 supports string here
-      },
-    },
-    log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
-  });
+// export const prisma =
+//   globalForPrisma.prisma ??
+//   new PrismaClient({
+//     datasources: {
+//       db: {
+//         url: process.env.POSTGRES_PRISMA_URL, // Prisma 6 supports string here
+//       },
+//     },
+//     log: process.env.NODE_ENV === "development" ? ["query", "error", "warn"] : ["error"],
+//   });
 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+// if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+
+// export default prisma;
+
+const prisma = new PrismaClient({ adapter });
 
 export default prisma;

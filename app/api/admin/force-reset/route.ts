@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from "@prisma/adapter-pg";
+const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
 
 // EMERGENCY ENDPOINT - DELETE AFTER USE
 // This directly sets the known working hash without any bcrypt operations
 
 export async function GET(request: NextRequest) {
   try {
-    const prisma = new PrismaClient();
+     const prisma = new PrismaClient({ adapter });
     await prisma.$connect();
     
     const adminEmail = 'admin@skylimittravels.co.uk';

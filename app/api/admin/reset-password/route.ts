@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { hash } from 'bcryptjs';
+import { PrismaPg } from "@prisma/adapter-pg";
+const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
 
 // IMPORTANT: Delete this file after use - it's only for emergency admin reset
 // This is not secure for production use
@@ -21,7 +23,7 @@ export async function GET(request: NextRequest) {
   }
   
   try {
-    const prisma = new PrismaClient();
+     const prisma = new PrismaClient({ adapter });
     await prisma.$connect();
     
     const adminEmail = 'admin@skylimittravels.co.uk';

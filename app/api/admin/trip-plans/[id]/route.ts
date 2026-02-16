@@ -2,8 +2,10 @@ import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
+import { PrismaPg } from "@prisma/adapter-pg";
+const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
 
-const prisma = new PrismaClient();
+ const prisma = new PrismaClient({ adapter });
 
 export async function GET(
   request: Request,

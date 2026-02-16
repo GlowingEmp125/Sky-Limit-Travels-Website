@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { hash } from 'bcryptjs';
+import { PrismaPg } from "@prisma/adapter-pg";
+const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
 
 // TEMPORARY EMERGENCY ENDPOINT - DELETE AFTER USE
 // This endpoint allows resetting the admin password by providing the database connection string
@@ -32,13 +34,7 @@ export async function GET(request: NextRequest) {
     }
     
     // Create prisma client with the connection string
-    const prisma = new PrismaClient({
-      datasources: {
-        db: {
-          url: connectionString
-        }
-      }
-    });
+    const prisma = new PrismaClient({ adapter });
     
     await prisma.$connect();
     
