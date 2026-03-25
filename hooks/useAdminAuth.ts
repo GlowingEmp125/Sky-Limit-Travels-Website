@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 export function useAdminAuth() {
 
   const { data: session, status } = useSession();
-  
   const router = useRouter();
   
   const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
