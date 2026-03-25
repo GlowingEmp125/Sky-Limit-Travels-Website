@@ -58,8 +58,11 @@ type TripPlan = {
 };
 
 export default function TripPlanDetailPage({ params }: { params: { id: string } }) {
+
   const router = useRouter();
+  
   const { id } = params;
+  
   const [tripPlan, setTripPlan] = useState<TripPlan | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
