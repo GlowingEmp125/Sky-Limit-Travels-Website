@@ -10,7 +10,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isLoginPage = pathname === '/admin/login';
+  const isLoginPage = pathname?.startsWith( '/admin/login');
 
   return (
     <div className="min-h-screen bg-gray-100">
