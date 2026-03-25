@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import AdminAuthWrapper from '@/components/admin/AdminAuthWrapper';
 import AdminSidebar from '@/components/admin/AdminSidebar';
+import { Providers } from '../providers';
 
 export default function AdminLayout({
   children,
@@ -15,6 +16,8 @@ export default function AdminLayout({
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Exclude auth wrapper for login page */}
+      <Providers>
+
       {isLoginPage ? (
         <>{children}</>
       ) : (
@@ -27,6 +30,7 @@ export default function AdminLayout({
           </div>
          </AdminAuthWrapper>
       )}
+      </Providers>
     </div>
   );
 } 
