@@ -18,14 +18,14 @@ export default function AdminLayout({
       {isLoginPage ? (
         <>{children}</>
       ) : (
-        // <AdminAuthWrapper>
+        <AdminAuthWrapper>
           <div className="flex">
             <AdminSidebar />
             <main className="flex-1 p-6 overflow-y-auto">
               {children}
             </main>
           </div>
-        // </AdminAuthWrapper>
+         </AdminAuthWrapper>
       )}
     </div>
   );
