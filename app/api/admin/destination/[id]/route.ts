@@ -24,6 +24,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
     const { id } = params;
 
+    console.log("Fetching destination with ID:", id);
+
     // Use executeAsAdmin for secure database access
     const destination = await executeAsAdmin(async (prisma) => {
       return await prisma.destination.findUnique({

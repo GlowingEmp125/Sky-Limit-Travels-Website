@@ -1,7 +1,6 @@
-import { Metadata } from 'next';
-import { holidaysData } from '@/data/holidays';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Metadata } from 'next';
+import Link from 'next/link';
 
 // Hardcoded destinations for demonstration
 const destinations = [
@@ -24,7 +23,6 @@ export function generateStaticParams() {
 // Generate metadata for each page
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
 
-  console.log("id------------------>",params.id);
 
   const Holiday = destinations.find(d => d.id === params.id);
   
@@ -51,8 +49,6 @@ function DestinationInfo({ id }: { id: string }) {
   
   const Holiday = destinations.find(d => d.id === id);
 
-  console.log("id-=================>",id);
-  
   if (!Holiday) {
     return (
       <div className="container mx-auto px-4 py-12 text-center">
