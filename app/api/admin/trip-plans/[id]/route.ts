@@ -3,20 +3,29 @@ import { PrismaClient } from '@prisma/client';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { PrismaPg } from "@prisma/adapter-pg";
-const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
-
- const prisma = new PrismaClient({ adapter });
 
 export async function GET(
   request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
+    // Skip during build
+    if (process.env.NEXT_PHASE === 'phase-production-build') {
+      return NextResponse.json(
+        { error: 'Not available during build' },
+        { status: 503 }
+      );
+    }
+
     // Check authentication
     const session = await getServerSession(authOptions);
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+
+    // Create adapter and client inside the function
+    const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
+    const prisma = new PrismaClient({ adapter });
 
     const { id } = params;
 
@@ -47,11 +56,23 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
+    // Skip during build
+    if (process.env.NEXT_PHASE === 'phase-production-build') {
+      return NextResponse.json(
+        { error: 'Not available during build' },
+        { status: 503 }
+      );
+    }
+
     // Check authentication
     const session = await getServerSession(authOptions);
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+
+    // Create adapter and client inside the function
+    const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
+    const prisma = new PrismaClient({ adapter });
 
     const { id } = params;
     const data = await request.json();
@@ -102,11 +123,23 @@ export async function DELETE(
   { params }: { params: { id: string } }
 ) {
   try {
+    // Skip during build
+    if (process.env.NEXT_PHASE === 'phase-production-build') {
+      return NextResponse.json(
+        { error: 'Not available during build' },
+        { status: 503 }
+      );
+    }
+
     // Check authentication
     const session = await getServerSession(authOptions);
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
+
+    // Create adapter and client inside the function
+    const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
+    const prisma = new PrismaClient({ adapter });
 
     const { id } = params;
 

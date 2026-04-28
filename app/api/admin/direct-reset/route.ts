@@ -2,13 +2,20 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { hash } from 'bcryptjs';
 import { PrismaPg } from "@prisma/adapter-pg";
-const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
 
 // TEMPORARY EMERGENCY ENDPOINT - DELETE AFTER USE
 // This endpoint allows resetting the admin password by providing the database connection string
 // This is NOT secure and should be deleted immediately after use
 
 export async function GET(request: NextRequest) {
+  // Skip during build
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+    return NextResponse.json(
+      { message: 'This endpoint is skipped during build' },
+      { status: 503 }
+    );
+  }
+
   const url = new URL(request.url);
   
   // Get the connection string from URL params (encoded as base64 for safety)
@@ -33,7 +40,8 @@ export async function GET(request: NextRequest) {
       );
     }
     
-    // Create prisma client with the connection string
+    // Create adapter and prisma client with the connection string
+    const adapter = new PrismaPg({ connectionString });
     const prisma = new PrismaClient({ adapter });
     
     await prisma.$connect();

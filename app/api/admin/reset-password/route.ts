@@ -2,12 +2,19 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { hash } from 'bcryptjs';
 import { PrismaPg } from "@prisma/adapter-pg";
-const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
 
 // IMPORTANT: Delete this file after use - it's only for emergency admin reset
 // This is not secure for production use
 
 export async function GET(request: NextRequest) {
+  // Skip during build
+  if (process.env.NEXT_PHASE === 'phase-production-build') {
+    return NextResponse.json(
+      { message: 'This endpoint is skipped during build' },
+      { status: 503 }
+    );
+  }
+
   // Check for a secret token in the URL to prevent unauthorized access
   const url = new URL(request.url);
   const secretToken = url.searchParams.get('token');
@@ -23,7 +30,9 @@ export async function GET(request: NextRequest) {
   }
   
   try {
-     const prisma = new PrismaClient({ adapter });
+    // Create adapter and client inside the function
+    const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
+    const prisma = new PrismaClient({ adapter });
     await prisma.$connect();
     
     const adminEmail = 'admin@skylimittravels.co.uk';

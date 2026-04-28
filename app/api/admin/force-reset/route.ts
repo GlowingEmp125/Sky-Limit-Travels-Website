@@ -1,14 +1,30 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from "@prisma/adapter-pg";
-const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
 
 // EMERGENCY ENDPOINT - DELETE AFTER USE
 // This directly sets the known working hash without any bcrypt operations
 
 export async function GET(request: NextRequest) {
   try {
-     const prisma = new PrismaClient({ adapter });
+    // Skip during build
+    if (process.env.NEXT_PHASE === 'phase-production-build') {
+      return NextResponse.json(
+        { message: 'This endpoint is skipped during build' },
+        { status: 503 }
+      );
+    }
+
+    // Validate database URL
+    if (!process.env.POSTGRES_PRISMA_URL) {
+      return NextResponse.json(
+        { error: 'Database URL not configured' },
+        { status: 500 }
+      );
+    }
+
+    const adapter = new PrismaPg({ connectionString: process.env.POSTGRES_PRISMA_URL });
+    const prisma = new PrismaClient({ adapter });
     await prisma.$connect();
     
     const adminEmail = 'admin@skylimittravels.co.uk';
